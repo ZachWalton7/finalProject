@@ -1,0 +1,42 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "Final Group Project",
+  "main": "server/index.js",
+  "dependencies": {
+    "@types/body-parser": "^1.16.7",
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.0.39",
+    "@types/express-mysql-session": "^1.2.2",
+    "@types/express-session": "^1.15.5",
+    "@types/mysql": "^2.15.0",
+    "@types/node": "^8.0.47",
+    "@types/stripe": "^4.7.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-mysql-session": "^1.2.2",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "prerender": "^4.4.1",
+    "sendgrid": "^5.2.3",
+    "stripe": "^5.2.0",
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachWalton7/finalProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZachWalton7/finalProject/issues"
+  },
+  "homepage": "https://github.com/ZachWalton7/finalProject#readme"
+}

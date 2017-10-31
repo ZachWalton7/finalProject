@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "Final Group Project",
   "main": "server/index.js",
+  "scripts": {
+    "test": "source variables && npm run dev",
+    "build:ts": "tsc -p .",
+    "server": "node server/index.js",
+    "dev": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
+    "start": "npm run build:ts && npm run server"
+  },
   "dependencies": {
     "@types/body-parser": "^1.16.7",
     "@types/cookie-parser": "^1.4.1",
@@ -19,15 +26,13 @@
     "express-session": "^1.15.6",
     "mysql": "^2.15.0",
     "prerender": "^4.4.1",
+    "prerender-node": "^2.7.4",
     "sendgrid": "^5.2.3",
     "stripe": "^5.2.0",
     "typescript": "^2.5.3"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

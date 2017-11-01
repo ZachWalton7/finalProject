@@ -8,4 +8,12 @@ angular.module('TruckHunt.directives', [])
             activePage: '='
         }
     };
+}])
+
+// Directive for Footer
+.directive('footerNav', [function() {
+    return {
+        templateUrl: 'directives/footer.html',
+        restrict: 'E',
+    };
 }]);

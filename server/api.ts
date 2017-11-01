@@ -4,6 +4,7 @@ import donationsController from './controllers/donations.ctrl';
 import scheduleController from './controllers/schedule.ctrl';
 import stripeController from './controllers/stripe.ctrl';
 import trucksController from './controllers/trucks.ctrl';
+import contactFormController from './controllers/contact.ctrl';
 
 const router = Router();
 
@@ -12,5 +13,7 @@ router.use('/donations', donationsController);
 router.use('/schedule', scheduleController);
 router.use('/stripe', stripeController);
 router.use('/trucks', trucksController);
+router.use('/contactforms', contactFormController)
+
 
 export default router;

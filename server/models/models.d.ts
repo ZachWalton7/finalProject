@@ -26,4 +26,9 @@ declare namespace models {
         lat: number;
         lng: number;
     }
+    interface IDonations {
+        id: number;
+        amount: number;
+        stripetransactionid: number;
+    }
 }

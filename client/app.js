@@ -1,6 +1,7 @@
 angular.module('TruckHunt', [
     'ngRoute',
     'ngResource',
+    'ngMap',
     'TruckHunt.factories',
     'TruckHunt.controllers',
     'TruckHunt.services',

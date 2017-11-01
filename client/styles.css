@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
 .content-container {
-    background: url("/Users/savannabooth/finalProject/client/images/cafe-691956_1920.jpg") no-repeat center center fixed;
+    background: url("/images/cafe-691956_1920.jpg") no-repeat center center;
     background-size: cover;
     min-height: 100px;
     min-width: 100%;
@@ -27,7 +27,8 @@ body {
 	font-size: 12px;
 	line-height:30px;
 	color:#777;
-	background:#0CF;
+    background:#0CF;
+    /* background: url("/images/cafe-691956_1920.jpg") no-repeat center center; */
 }
 
 .container {

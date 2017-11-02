@@ -12,6 +12,6 @@ export function readByEmail(email: string): Promise<models.IUser> {
     return row('GetUserByEmail', [email]);
 }
 
-export function create(truckid: number, username: string, email: string, hash: string) {
-    return row('InsertUser', [truckid, username, email, hash]);
+export function create(username: string, email: string, hash: string, truckname: string) {
+    return row('InsertUser', [username, email, hash, truckname]);
 }

@@ -31,4 +31,10 @@ declare namespace models {
         amount: number;
         stripetransactionid: number;
     }
+    interface IUser {
+        id: number;
+        truckid: number;
+        username: string;
+        password: string;
+    }
 }

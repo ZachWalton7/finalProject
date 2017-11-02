@@ -20,6 +20,33 @@ angular.module('TruckHunt.controllers', [])
             console.log('markers', map.markers);
             console.log('shapes', map.shapes);
         });
+
+        $scope.clicked = function() {
+            alert('Clicked a link inside infoWindow');
+          };
+        
+          $scope.shops = dailySchedule.query()
+        
+          $scope.shop = $scope.shops[0];
+          console.log($scope.shop)
+        
+          $scope.showDetail = function(e, shop) {
+            $scope.shop = shop;
+            $scope.map.showInfoWindow('foo-iw', $scope.shop.id);
+            console.log(scope.shop.id)
+          };
+        
+          $scope.hideDetail = function() {
+            $scope.map.hideInfoWindow('foo-iw');
+          };
+
+        
+        //   vm.hideDetail = function() {
+        //     vm.map.hideInfoWindow('foo-iw');
+        //   };
+
+
+
         function getSchedule() {
             $scope.schedules = dailySchedule.query();
             console.log($scope.schedules);
@@ -65,9 +92,9 @@ angular.module('TruckHunt.controllers', [])
         }
     }])
     .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams','NgMap', function ($scope, Trucks, $location, $routeParams, NgMap) {
-        // let route = $routeParams.id
-        // $scope.trucks = Truck.get({ id: route });
-        // console.log($scope.trucks);
+        let route = $routeParams.id
+        $scope.trucks = Trucks.get({ id: route });
+        console.log($scope.trucks);
         // SEOService.setSEO({
         //     title: $scope.trucks.name,
         //     description: $scope.trucks.description,

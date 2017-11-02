@@ -17,3 +17,6 @@ angular.module('TruckHunt.factories', [])
  .factory('TrucksByCatID', ['$resource', function($resource){
      return $resource('/api/categories/:id', { id: '@id'});
  }])
+ .factory('dailySchedule', ['$resource', function($resource){
+    return $resource('/api/schedule/daily', { id: '@id'});
+}])

@@ -23,6 +23,16 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/daily', (req, res) => {
+    procedures.daily()
+    .then((schedule) => {
+        res.send(schedule);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
+});
+
 router.get('/:id', (req, res) => {
     procedures.read(req.params.id)
     .then((schedule) => {

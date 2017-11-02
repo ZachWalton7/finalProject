@@ -15,3 +15,7 @@ export function create(location: string, locationname: string, dayofweek: string
 export function update(id: number, location: string, locationname: string, dayofweek: string, lunchdinner: string, lat: number, lng: number) {
     return empty('UpdateSchedule', [id, location, locationname, dayofweek, lunchdinner, lat, lng])
 }
+
+export function daily() {
+    return rows("getDailySchedule")
+}

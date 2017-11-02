@@ -3,6 +3,6 @@
 
 <ng-map id="map" center="[33.5044426, -86.7801973]">
 
-    <marker position="33.5044426, -86.7801973" title="Hello World!"></marker>
-
+    <marker ng-repeat="schedule in schedules" position="{{ schedule.lat }}, {{ schedule.lng }}" title="{{ schedule.name }}"></marker>
+    
 </ng-map>

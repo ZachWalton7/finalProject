@@ -131,6 +131,10 @@ fieldset {
     position: relative;
 }
 
+.follow-container {
+	text-align: center;
+}
+
 /* footer styling */
 .footer {
     position: relative;

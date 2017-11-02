@@ -64,15 +64,15 @@ angular.module('TruckHunt.controllers', [])
                 });
         }
     }])
-    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams', 'SEOService', function ($scope, Trucks, $location, $routeParams, SEOService) {
+    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams', function ($scope, Trucks, $location, $routeParams) {
         let route = $routeParams.id
         $scope.trucks = Truck.get({ id: route });
         console.log($scope.trucks);
-        SEOService.setSEO({
-            title: $scope.trucks.name,
-            description: $scope.trucks.description,
-            url: $location.url()
-        });
+        // SEOService.setSEO({
+        //     title: $scope.trucks.name,
+        //     description: $scope.trucks.description,
+        //     url: $location.url()
+        // });
     }])
     .controller('ListController', ['$scope', 'Trucks', 'SEOService', '$location', function ($scope, Trucks, SEOService, $location) {
         $scope.trucks = Truck.query();

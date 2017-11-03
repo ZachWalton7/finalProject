@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     utils.encryptPassword(req.body.password)
     .then((hash) => {
-        return procedures.create(req.body.email, hash, req.body.firstname, req.body.lastname);
+        return procedures.create(req.body.username, req.body.email, hash);
     }).then((id) => {
         res.send(id);
     }).catch((e) => {

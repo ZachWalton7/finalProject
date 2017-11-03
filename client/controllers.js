@@ -103,3 +103,30 @@ angular.module('TruckHunt.controllers', [])
             url: $location.url()
         });
     }])
+    .controller('LoginController', ['$scope', 'UserService', '$location', function($scope, UserService, $location) {
+        UserService.me()
+        .then((me) => {
+            redirect();
+        });
+    
+        function redirect() {
+            let dest = $location.search().dest;
+            if (!dest) {
+                dest = '/';
+            }
+            $location.replace().path(dest).search('dest', null);
+        }
+    
+        $scope.login = function() {
+            UserService.login($scope.email, $scope.password)
+            .then((user) => {
+                redirect();
+            });
+        }
+    }])
+    .controller('LogoutController', ['$location', 'UserService', function($location, UserService) {
+        UserService.logout()
+        .then(() => {
+            $location.replace().path('/');
+        });
+    }]);

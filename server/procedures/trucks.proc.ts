@@ -12,10 +12,14 @@ export function categoryread(categoryid: number): Promise<Array<models.ITrucks>>
     return rows('GetTrucksByCatID', [categoryid]);
 }
 
-export function update(id: number, categoryid: number, name: string, description: string, imageurl: string, menuimg: string) {
-    return empty('UpdateTruck', [id, categoryid, name, description, imageurl, menuimg]);
+export function userread(userid: number): Promise<models.ITrucks> {
+    return row('GetTruckByUserID', [userid]);
 }
 
-export function create(categoryid: number, name: string, description: string, imageurl: string, menuimg: string) {
-    return row('InsertTruck', [categoryid, name, description, imageurl, menuimg]);
+export function update(id: number, userid: number, categoryid: number, name: string, description: string, imageurl: string, menuimg: string) {
+    return empty('UpdateTruck', [id, userid, categoryid, name, description, imageurl, menuimg]);
+}
+
+export function create(userid: number, categoryid: number, name: string, description: string, imageurl: string, menuimg: string) {
+    return row('InsertTruck', [userid, categoryid, name, description, imageurl, menuimg]);
 }

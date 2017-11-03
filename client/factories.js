@@ -23,6 +23,6 @@ angular.module('TruckHunt.factories', [])
 .factory('Users', ['$resource', function($resource) {
     return $resource('/api/users/:id', { id: '@id'});
 }])
-.factory('Categories', [$resource], function($resource) {
+.factory('Categories', ['$resource', function($resource) {
     return $resource('/api/categories/:id', { id: '@id'});
-})
+}])

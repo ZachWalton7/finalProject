@@ -13,7 +13,7 @@ angular.module('TruckHunt.controllers', [])
             });
         }
     }])
-    .controller('MapController', ['$scope', 'NgMap', 'dailySchedule', function ($scope, NgMap, dailySchedule) {
+    .controller('MapController', ['$scope', 'NgMap', 'dailySchedule','SEOService', function ($scope, NgMap, dailySchedule, SEOService) {
         let vm = this
 
         NgMap.getMap().then(function(map) {
@@ -39,11 +39,11 @@ angular.module('TruckHunt.controllers', [])
             
         };
 
-        // SEOService.setSEO({
-        //     title: 'Welcome to Truck Hunt!',
-        //     description: 'We give so many Trucks.',
-        //     url: $location.url()
-        // });
+        SEOService.setSEO({
+            title: 'Welcome to Truck Hunt!',
+            description: 'We give so many Trucks.',
+            url: $location.url()
+        });
     }])
     .controller('DonateController', ['$scope', 'Donations', '$rootScope', 'Stripe', '$location', 'SEOService', function ($scope, Donations, $rootScope, Stripe, $location, SEOService) {
         let elements = stripe.elements();
@@ -78,15 +78,15 @@ angular.module('TruckHunt.controllers', [])
                 });
         }
     }])
-    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams','NgMap', function ($scope, Trucks, $location, $routeParams, NgMap) {
+    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams','NgMap','SEOService', function ($scope, Trucks, $location, $routeParams, NgMap) {
         let route = $routeParams.id
         $scope.trucks = Trucks.get({ id: route });
         console.log($scope.trucks);
-        // SEOService.setSEO({
-        //     title: $scope.trucks.name,
-        //     description: $scope.trucks.description,
-        //     url: $location.url()
-        // });
+        SEOService.setSEO({
+            title: $scope.trucks.name,
+            description: $scope.trucks.description,
+            url: $location.url()
+        });
         NgMap.getMap().then(function (map) {
             console.log(map.getCenter());
             console.log('markers', map.markers);

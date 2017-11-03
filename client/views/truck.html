@@ -1,9 +1,31 @@
 <main-navigation></main-navigation>
 <h3>Individual Truck Page</h3>
 
+<!-- header pic -->
+<!-- <div class="container">
+<div class = "col-md-7">
+    <img src="/images/Big-Spoon-Creamery.jpg">
+</div>
+</div> -->
 
-<ng-map id="map" center="[33.5044426, -86.7801973]">
-        
-            <!-- <marker ng-repeat="schedule in schedules" position="{{ schedule.lat }}, {{ schedule.lng }}" title="{{ schedule.name }}"></marker> -->
+<div class="container">
+        <img src="/images/Big-Spoon-Creamery.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">Big Spoon Creamery</div>
+        </div>
+      </div>
+
+<div class"container-fluid">
+    <div class="truck1-desc">
+    <p id="truck1-p"> Big Spoon Creamery </p>
+    <h6> Big Spoon Creamery is an artisan ice cream company located in Birmingham, Alabama. We are a small company simply dedicated to carefully sourcing ingredients, thoughtfully crafting the best possible ice cream, and serving our customers and community with purpose. 
             
+            Visit our new storefront in Avondale at the MAKEbhm building, or find us at events throughout the Birmingham area! </h6>
+    </div>
+<!-- <div class="container-fluid"> -->
+    <div class="truck1-map">
+<ng-map id="truck1-map" center="[33.5044426, -86.7801973]">
+            <!-- <marker ng-repeat="schedule in schedules" position="{{ schedule.lat }}, {{ schedule.lng }}" title="{{ schedule.name }}"></marker> -->    
         </ng-map>
+    </div> 
+<!-- </div> -->

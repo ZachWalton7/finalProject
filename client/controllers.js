@@ -13,7 +13,7 @@ angular.module('TruckHunt.controllers', [])
             });
         }
     }])
-    .controller('MapController', ['$scope', 'NgMap', 'dailySchedule','SEOService', function ($scope, NgMap, dailySchedule, SEOService) {
+    .controller('MapController', ['$scope', 'NgMap', 'dailySchedule','SEOService','$location', function ($scope, NgMap, dailySchedule, SEOService, $location) {
         let vm = this
 
         NgMap.getMap().then(function(map) {

@@ -21,11 +21,7 @@
     <h6>{{ single.truckDescription }}</h6>
     </div>
 <!-- <div class="container-fluid"> -->
-    <div class="truck1-map">
-<ng-map id="truck1-map" center="[{{ single.lat }}, {{ single.lng }}]">
-            <marker icon="http://cdn.mysitemyway.com/icons-watermarks/simple-black/iconathon/iconathon_food-truck/iconathon_food-truck_simple-black_96x96.png" position="{{ single.lat }}, {{ single.lng }}" title="{{ single.name }}"></marker>    
-        </ng-map>
-    </div> 
+
 <!-- </div> -->
 
 
@@ -69,3 +65,11 @@
     
             </div>
         </div>
+    </div>
+
+    <div class="truck1-map">
+            <ng-map id="truck1-map" center="[{{ single.lat }}, {{ single.lng }}]">
+                        <marker icon="http://cdn.mysitemyway.com/icons-watermarks/simple-black/iconathon/iconathon_food-truck/iconathon_food-truck_simple-black_96x96.png" position="{{ single.lat }}, {{ single.lng }}" title="{{ single.name }}"></marker>    
+                    </ng-map>
+                </div> 
+

@@ -1,5 +1,5 @@
 <main-navigation></main-navigation>
-<h3>Individual Truck Page</h3>
+<!-- <h3>Individual Truck Page</h3> -->
 
 <!-- header pic -->
 <!-- <div class="container">
@@ -14,12 +14,13 @@
           <div class="text">{{ single.truckName }}</div>
         </div>
       </div> -->
-
+<!-- 
 <div class"container-fluid">
     <div class="truck1-desc">
     <p id="truck1-p"> {{ single.truckName }} </p>
     <h6>{{ single.truckDescription }}</h6>
     </div>
+</div> -->
 <!-- <div class="container-fluid"> -->
 
 <!-- </div> -->
@@ -59,12 +60,30 @@
     <div class="color-stripe">
             <div class="color-block">
                 <!-- put logo or button / hours here  -->
-            </div>
-            <div class="cart">
+                <div class="truck1-desc">
                 </br>
-    
+            </br>
+                        <p id="truck1-p"> 
+                            {{ single.truckName }} </p>
+                        </br>
+                        <h4 id="truck1-info">{{ single.truckDescription }}</h4>
+                        </div>
+                <!-- <img src="/images/745-200.png"> -->
+                <!-- <h4> Hours: </h4> -->
             </div>
-        </div>
+            </div>
+
+            <div class="color-stripe">
+                    <div class="color-block2">
+                    </br>
+                        <p id="menu-name">Menu</p>
+
+                        <!-- add menu here? -->
+                    </div>
+                    </div>
+
+
+
     </div>
 
     <div class="truck1-map">

@@ -1,6 +1,7 @@
 declare namespace models {
     interface ITrucks {
         id: number;
+        userid: number;
         categoryid: number;
         name: string;
         descripton: string;

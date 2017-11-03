@@ -182,6 +182,7 @@ fieldset {
     text-align: center;
 }
 
+<<<<<<< HEAD
 /* Truck 1 individual map */
 
 /* Truck 1 pic */
@@ -233,3 +234,24 @@ fieldset {
 	background-color: black
 	
 }
+=======
+.map-container {
+	width: 100%;
+	height: 100%;
+}
+	
+#main-map {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.truck-nav {
+	background-color: skyblue;
+}
+
+.nav-text {
+	color: orange;
+}
+
+>>>>>>> e4b11c81dcff3c217bc48a705831185ce1c44704

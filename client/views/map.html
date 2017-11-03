@@ -1,8 +1,18 @@
 <main-navigation></main-navigation>
 <h3>Page with map view</h3>
+<div ng-controller="MapController as vm">
+    <ng-map default-style="true" zoom="10" center="[33.523358, -86.802514]">
+        <marker id="{{ shop.truckId }}" position="[{{ shop.lat }}, {{ shop.lng }}]" ng-repeat="shop in vm.shops"  title="{{ shop.truckName }}"
+            on-click="vm.showDetail(shop)"></marker>
 
-<ng-map zoom="10" id="map" center="[33.523358, -86.802514]">
-
-    <marker ng-repeat="schedule in schedules" position="{{ schedule.lat }}, {{ schedule.lng }}" title="{{ schedule.name }}"></marker>
-    
+        <info-window id="foo-iw">
+            <div ng-non-bindable="">
+              Name: {{vm.shop.truckName}}<br/>
+              Category: {{vm.shop.categoryName}} <br/>
+              Description: {{vm.shop.truckDescription}}<br/>
+              Time: {{vm.shop.truckDescription}}<br/>
+              <a href="#" ng-click="vm.clicked()">Click Here</a> -->
+            </div>
+          </info-window>
+</div>
 </ng-map>

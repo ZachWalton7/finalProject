@@ -14,44 +14,31 @@ angular.module('TruckHunt.controllers', [])
         }
     }])
     .controller('MapController', ['$scope', 'NgMap', 'dailySchedule', function ($scope, NgMap, dailySchedule) {
+        let vm = this
 
-        NgMap.getMap().then(function (map) {
-            console.log(map.getCenter());
-            console.log('markers', map.markers);
-            console.log('shapes', map.shapes);
+        NgMap.getMap().then(function(map) {
+            console.log('map', map);
+            vm.map = map;
         });
-
-        $scope.clicked = function() {
-            alert('Clicked a link inside infoWindow');
-          };
         
-          $scope.shops = dailySchedule.query()
-        
-          $scope.shop = $scope.shops[0];
-          console.log($scope.shop)
-        
-          $scope.showDetail = function(e, shop) {
-            $scope.shop = shop;
-            $scope.map.showInfoWindow('foo-iw', $scope.shop.id);
-            console.log(scope.shop.id)
-          };
-        
-          $scope.hideDetail = function() {
-            $scope.map.hideInfoWindow('foo-iw');
-          };
-
-        
-        //   vm.hideDetail = function() {
-        //     vm.map.hideInfoWindow('foo-iw');
-        //   };
-
-
-
-        function getSchedule() {
-            $scope.schedules = dailySchedule.query();
-            console.log($scope.schedules);
+        vm.clicked = function () {
+            alert('Clicked a link inside infoWindow')
         };
-        getSchedule();
+
+        vm.shops = dailySchedule.query();
+
+        vm.shop = vm.shops[0];
+        console.log(vm.shop)
+
+        vm.showDetail = function(e, shop){
+            vm.shop = shop;
+            console.log(shop);
+            console.log(vm.shop);
+            console.log(shop.truckId);
+            vm.map.showInfoWindow('foo-iw', shop.truckId.toString());
+            
+        };
+
         // SEOService.setSEO({
         //     title: 'Welcome to Truck Hunt!',
         //     description: 'We give so many Trucks.',

@@ -1,18 +1,24 @@
 <main-navigation></main-navigation>
-<h3>Page with map view</h3>
-<div ng-controller="MapController as vm">
-    <ng-map default-style="true" zoom="10" center="[33.523358, -86.802514]">
-        <marker id="{{ shop.truckId }}" position="[{{ shop.lat }}, {{ shop.lng }}]" ng-repeat="shop in vm.shops"  title="{{ shop.truckName }}"
-            on-click="vm.showDetail(shop)"></marker>
 
-        <info-window id="foo-iw">
-            <div ng-non-bindable="">
-              Name: {{vm.shop.truckName}}<br/>
-              Category: {{vm.shop.categoryName}} <br/>
-              Description: {{vm.shop.truckDescription}}<br/>
-              Time: {{vm.shop.truckDescription}}<br/>
-              <a href="#" ng-click="vm.clicked()">Click Here</a> -->
-            </div>
-          </info-window>
+<div class="map-container">
+    <div ng-controller="MapController as vm">
+        <ng-map id="main-map" zoom="14" center="[33.523358, -86.802514]"       
+        styles="[{elementType:'geometry',stylers:[{color:'#ebe3cd'}]},{elementType:'labels.text.fill',stylers:[{color:'#523735'}]},{elementType:'labels.text.stroke',stylers:[{color:'#f5f1e6'}]},{featureType:'administrative',elementType:'geometry.stroke',stylers:[{color:'#c9b2a6'}]},{featureType:'administrative.land_parcel',elementType:'geometry.stroke',stylers:[{color:'#dcd2be'}]},{featureType:'administrative.land_parcel',elementType:'labels.text.fill',stylers:[{color:'#ae9e90'}]},{featureType:'landscape.natural',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'poi',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'poi',elementType:'labels.text.fill',stylers:[{color:'#93817c'}]},{featureType:'poi.park',elementType:'geometry.fill',stylers:[{color:'#a5b076'}]},{featureType:'poi.park',elementType:'labels.text.fill',stylers:[{color:'#447530'}]},{featureType:'road',elementType:'geometry',stylers:[{color:'#f5f1e6'}]},{featureType:'road.arterial',elementType:'geometry',stylers:[{color:'#fdfcf8'}]},{featureType:'road.highway',elementType:'geometry',stylers:[{color:'#f8c967'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#e9bc62'}]},{featureType:'road.highway.controlled_access',elementType:'geometry',stylers:[{color:'#e98d58'}]},{featureType:'road.highway.controlled_access',elementType:'geometry.stroke',stylers:[{color:'#db8555'}]},{featureType:'road.local',elementType:'labels.text.fill',stylers:[{color:'#806b63'}]},{featureType:'transit.line',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'transit.line',elementType:'labels.text.fill',stylers:[{color:'#8f7d77'}]},{featureType:'transit.line',elementType:'labels.text.stroke',stylers:[{color:'#ebe3cd'}]},{featureType:'transit.station',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'water',elementType:'geometry.fill',stylers:[{color:'#b9d3c2'}]},{featureType:'water',elementType: 'labels.text.fill',stylers:[{color:'#92998d'}]}]">
+            <marker id="{{ shop.truckId }}" position="[{{ shop.lat }}, {{ shop.lng }}]" ng-repeat="shop in vm.shops"  title="{{ shop.truckName }}"
+                on-click="vm.showDetail(shop)" icon="http://cdn.mysitemyway.com/icons-watermarks/simple-black/iconathon/iconathon_food-truck/iconathon_food-truck_simple-black_96x96.png"></marker>
+
+            <info-window id="foo-iw">
+                <div>
+                <h3>{{vm.shop.truckName}}</h3>
+                Category: {{vm.shop.categoryName}} <br/>
+                Description: {{vm.shop.truckDescription}}<br/>
+                Time: {{vm.shop.truckDescription}}<br/>
+                <a ng-href="/{{vm.shop.truckId}}">Click Here</a>
+                </div>
+            </info-window>
+    
+        </ng-map>
+    </div>
 </div>
-</ng-map>
+
+<!-- [{elementType:'geometry',stylers:[{color:'#ebe3cd'}]},{elementType:'labels.text.fill',stylers:[{color:'#523735'}]},{elementType:'labels.text.stroke',stylers:[{color:'#f5f1e6'}]},{featureType:'administrative',elementType:'geometry.stroke',stylers:[{color:'#c9b2a6'}]},{featureType:'administrative.land_parcel',elementType:'geometry.stroke',stylers:[{color:'#dcd2be'}]},{featureType:'administrative.land_parcel',elementType:'labels.text.fill',stylers:[{color:'#ae9e90'}]},{featureType:'landscape.natural',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'poi',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'poi',elementType:'labels.text.fill',stylers:[{color:'#93817c'}]},{featureType:'poi.park',elementType:'geometry.fill',stylers:[{color:'#a5b076'}]},{featureType:'poi.park',elementType:'labels.text.fill',stylers:[{color:'#447530'}]},{featureType:'road',elementType:'geometry',stylers:[{color:'#f5f1e6'}]},{featureType:'road.arterial',elementType:'geometry',stylers:[{color:'#fdfcf8'}]},{featureType:'road.highway',elementType:'geometry',stylers:[{color:'#f8c967'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#e9bc62'}]},{featureType:'road.highway.controlled_access',elementType:'geometry',stylers:[{color:'#e98d58'}]},{featureType:'road.highway.controlled_access',elementType:'geometry.stroke',stylers:[{color:'#db8555'}]},{featureType:'road.local',elementType:'labels.text.fill',stylers:[{color:'#806b63'}]},{featureType:'transit.line',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'transit.line',elementType:'labels.text.fill',stylers:[{color:'#8f7d77'}]},{featureType:'transit.line',elementType:'labels.text.stroke',stylers:[{color:'#ebe3cd'}]},{featureType:'transit.station',elementType:'geometry',stylers:[{color:'#dfd2ae'}]},{featureType:'water',elementType:'geometry.fill',stylers:[{color:'#b9d3c2'}]},{featureType:'water',elementType: 'labels.text.fill',stylers:[{color:'#92998d'}]}] -->

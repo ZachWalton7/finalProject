@@ -277,10 +277,10 @@ fieldset {
 	 text-align: center;
 	 /* font-weight: bold; */
 	 color: white;
-	 text-decoration: underline;
+	 /* text-decoration: underline; */
 	 text-transform: uppercase;
 	 letter-spacing: 2px;
-	 font-size: 400%;
+	 font-size: 450%;
  }
 
  #truck1-info {
@@ -294,7 +294,7 @@ fieldset {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 400%;
-	font-weight: bold;
+	/* font-weight: bold; */
  }
 
  /* list view button layover image styling */

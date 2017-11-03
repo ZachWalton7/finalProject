@@ -1,12 +1,11 @@
 <main-navigation></main-navigation>
-<h3>Page with list view</h3>
-
-<h2>Opacity with Box</h2>
-<p>Hover over the image to see the effect.</p>
-
-<div class="container">
-  <img src="/images/Big-Spoon-Creamery.jpg" alt="Avatar" class="image" style="width:100%">
+<h3>All Trucks</h3>
+<div ng-repeat="truck in trucks" class="list-container">
+  <img src="/images/Big-Spoon-Creamery.jpg" style="width:100%">
   <div class="middle">
-    <div class="text">John Doe</div>
+      <a ng-href="/{{ truck.id }}">
+    <div class="text">{{ truck.name }}
+        </a>
+    </div>
   </div>
 </div>

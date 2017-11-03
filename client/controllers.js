@@ -96,12 +96,15 @@ angular.module('TruckHunt.controllers', [])
         });
     }])
     .controller('ListController', ['$scope', 'Trucks', 'SEOService', '$location', function ($scope, Trucks, SEOService, $location) {
-        $scope.trucks = Truck.query();
+        $scope.trucks = Trucks.query();
+        console.log($scope.trucks);
+
         SEOService.setSEO({
             title: 'Truck it. Lets go Hunting.',
             description: 'Trucks trucks everywhere!',
             url: $location.url()
         });
+
     }])
     .controller('LoginController', ['$scope', 'UserService', '$location', function($scope, UserService, $location) {
         UserService.me()

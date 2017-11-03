@@ -23,7 +23,7 @@ angular.module('TruckHunt', [
         templateUrl: 'views/contactus.html',
         controller: 'ContactUsController'
     })
-    .when('/list', {
+    .when('/trucks', {
         templateUrl: 'views/list.html',
         controller: 'ListController'
     })

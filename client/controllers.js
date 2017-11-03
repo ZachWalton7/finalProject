@@ -121,6 +121,9 @@ angular.module('TruckHunt.controllers', [])
                 redirect();
             });
         }
+        $scope.createUser = function() {
+            $location.path('/signup');
+        }
     }])
     .controller('LogoutController', ['$location', 'UserService', function($location, UserService) {
         UserService.logout()

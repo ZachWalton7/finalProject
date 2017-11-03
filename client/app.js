@@ -39,6 +39,10 @@ angular.module('TruckHunt', [
         templateUrl: 'views/truck.html',
         controller: 'TruckController'
     })
+    .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignupController'
+    })
     .otherwise({
         redirectTo: '/'
     });

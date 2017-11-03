@@ -187,7 +187,7 @@ fieldset {
 /* Truck 1 pic */
 .container {
 	position: relative;
-	width: 50%;
+	/* width: 50%; */
   }
   
   .image {
@@ -226,9 +226,6 @@ fieldset {
   }
 
 
-#truck1-p {
-	
-  }
 .container-fluid .truck1-desc {
 	background-color: black
 	
@@ -251,4 +248,10 @@ fieldset {
 .nav-text {
 	color: orange;
 }
+
+#carouselExampleIndicators {
+	
+}
+
+
 

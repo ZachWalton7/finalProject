@@ -27,7 +27,7 @@ body {
 	font-size: 12px;
 	line-height:30px;
 	color:#777;
-    background:#0CF;
+	background:#efefef;
     /* background: url("/images/cafe-691956_1920.jpg") no-repeat center center; */
 }
 
@@ -40,6 +40,10 @@ body {
 
 #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
 
+.contact-container {
+	background-color: #caebf2
+}
+
 #contact {
 	background:#F9F9F9;
 	padding:25px;
@@ -47,7 +51,7 @@ body {
 }
 
 #contact h3 {
-	color: #F96;
+	color: #Ff3b3f;
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
@@ -92,7 +96,7 @@ fieldset {
 	cursor:pointer;
 	width:100%;
 	border:none;
-	background:#0CF;
+	background:#caebf2;
 	color:#FFF;
 	margin:0 0 5px;
 	padding:10px;
@@ -100,7 +104,7 @@ fieldset {
 }
 
 #contact button[type="submit"]:hover {
-	background:#09C;
+	background: #ff3b3f;
 	-webkit-transition:background 0.3s ease-in-out;
 	-moz-transition:background 0.3s ease-in-out;
 	transition:background-color 0.3s ease-in-out;
@@ -183,12 +187,6 @@ fieldset {
 }
 
 /* Truck 1 individual map */
-
-/* Truck 1 pic */
-.container {
-	position: relative;
-	width: 50%;
-  }
   
   .image {
 	display: block;
@@ -226,9 +224,6 @@ fieldset {
   }
 
 
-#truck1-p {
-	
-  }
 .container-fluid .truck1-desc {
 	background-color: black
 	
@@ -251,4 +246,15 @@ fieldset {
 .nav-text {
 	color: orange;
 }
+
+#carouselExampleIndicators {
+
+}
+
+.color-block {
+    height: 20em;
+	background-color: #ff3b3f;
+	opacity: 45%;
+    width: 100%;
+ }
 

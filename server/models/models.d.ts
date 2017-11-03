@@ -14,7 +14,7 @@ declare namespace models {
     }
     interface IUsers {
         id: number;
-        truckid: number;
+        email: string;
         username: string;
         password: string;
     }

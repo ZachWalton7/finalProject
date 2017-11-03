@@ -17,8 +17,8 @@ angular.module('TruckHunt.factories', [])
  .factory('TrucksByCatID', ['$resource', function($resource){
      return $resource('/api/categories/:id', { id: '@id'});
  }])
- .factory('dailySchedule', ['$resource', function($resource){
-    return $resource('/api/schedule/daily', { id: '@id'});
+ .factory('DailySchedule', ['$resource', function($resource){
+    return $resource('/api/schedule/daily/:id', { id: '@id'}, {});
 }])
 .factory('Users', ['$resource', function($resource) {
     return $resource('/api/users/:id', { id: '@id'});
@@ -26,3 +26,9 @@ angular.module('TruckHunt.factories', [])
 .factory('Categories', ['$resource', function($resource) {
     return $resource('/api/categories/:id', { id: '@id'});
 }])
+
+.factory('Single', ['$resource', function($resource) {
+    return $resource('/api/products/:id', {id: '@id'}, {
+    });
+}])
+

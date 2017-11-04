@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    procedures.create(req.body.category, req.body.name, req.body.description, req.body.imageurl, req.body.menuimg)
+    procedures.create(req.body.userid, req.body.category, req.body.name, req.body.description, req.body.imageurl, req.body.menuimg)
     .then((response) => {
         res.send(response);
     }).catch((e) => {
@@ -25,8 +25,8 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     procedures.read(req.params.id)
-    .then((post) => {
-        res.send(post);
+    .then((trucks) => {
+        res.send(trucks);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    procedures.update(req.params.id, req.body.category, req.body.name, req.body.description, req.body.imageurl, req.body.menuimg)
+    procedures.update(req.params.id, req.body.userid, req.body.category, req.body.name, req.body.description, req.body.imageurl, req.body.menuimg)
     .then(() => {
         res.sendStatus(204);
     }).catch((e) => {
@@ -44,13 +44,23 @@ router.put('/:id', (req, res) => {
 });
 
 router.get('/categories/:id', (req, res) => {
-    procedures.read(req.params.id)
-    .then((post) => {
-        res.send(post);
+    procedures.categoryread(req.params.id)
+    .then((trucks) => {
+        res.send(trucks);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
     });
 });
+
+router.get('/users/:id', (req, res) => {
+    procedures.userread(req.params.id)
+    .then((trucks) => {
+        res.send(trucks);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    })
+})
 
 export default router;

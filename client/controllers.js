@@ -13,7 +13,7 @@ angular.module('TruckHunt.controllers', [])
             });
         }
     }])
-    .controller('MapController', ['$scope', 'NgMap', 'dailySchedule','SEOService','$location', function ($scope, NgMap, dailySchedule, SEOService, $location) {
+    .controller('MapController', ['$scope', 'NgMap', 'DailySchedule','SEOService','$location', function ($scope, NgMap, DailySchedule, SEOService, $location) {
         let vm = this
 
         NgMap.getMap().then(function(map) {
@@ -25,7 +25,7 @@ angular.module('TruckHunt.controllers', [])
             alert('Clicked a link inside infoWindow')
         };
 
-        vm.shops = dailySchedule.query();
+        vm.shops = DailySchedule.query();
 
         vm.shop = vm.shops[0];
         console.log(vm.shop)
@@ -78,15 +78,17 @@ angular.module('TruckHunt.controllers', [])
                 });
         }
     }])
-    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams','NgMap','SEOService', function ($scope, Trucks, $location, $routeParams, NgMap) {
-        let route = $routeParams.id
-        $scope.trucks = Trucks.get({ id: route });
-        console.log($scope.trucks);
-        SEOService.setSEO({
-            title: $scope.trucks.name,
-            description: $scope.trucks.description,
-            url: $location.url()
-        });
+    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams','NgMap','DailySchedule', 'SEOService', function ($scope, Trucks, $location, $routeParams, NgMap, DailySchedule) {
+        const route = $routeParams.theId;
+        console.log($routeParams);
+        console.log(route);
+        $scope.single = DailySchedule.get({ id: route });
+        console.log($scope.single);
+        // SEOService.setSEO({
+        //     title: $scope.dailySchedule.name,
+        //     description: $scope.dailySchedule.description,
+        //     url: $location.url()
+        // });
         NgMap.getMap().then(function (map) {
             console.log(map.getCenter());
             console.log('markers', map.markers);
@@ -94,12 +96,15 @@ angular.module('TruckHunt.controllers', [])
         });
     }])
     .controller('ListController', ['$scope', 'Trucks', 'SEOService', '$location', function ($scope, Trucks, SEOService, $location) {
-        $scope.trucks = Truck.query();
+        $scope.trucks = Trucks.query();
+        console.log($scope.trucks);
+
         SEOService.setSEO({
             title: 'Truck it. Lets go Hunting.',
             description: 'Trucks trucks everywhere!',
             url: $location.url()
         });
+
     }])
     .controller('LoginController', ['$scope', 'UserService', '$location', function($scope, UserService, $location) {
         UserService.me()
@@ -120,6 +125,9 @@ angular.module('TruckHunt.controllers', [])
             .then((user) => {
                 redirect();
             });
+        }
+        $scope.createUser = function() {
+            $location.path('/signup');
         }
     }])
     .controller('LogoutController', ['$location', 'UserService', function($location, UserService) {

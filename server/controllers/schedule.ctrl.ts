@@ -33,6 +33,16 @@ router.get('/daily', (req, res) => {
     });
 });
 
+router.get('/daily/:id', (req, res) => {
+    procedures.read(req.params.id)
+    .then((schedule) => {
+        res.send(schedule);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
+});
+
 router.get('/:id', (req, res) => {
     procedures.read(req.params.id)
     .then((schedule) => {

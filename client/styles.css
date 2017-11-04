@@ -27,7 +27,7 @@ body {
 	font-size: 12px;
 	line-height:30px;
 	color:#777;
-    background:#0CF;
+	background:#efefef;
     /* background: url("/images/cafe-691956_1920.jpg") no-repeat center center; */
 }
 
@@ -40,6 +40,10 @@ body {
 
 #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
 
+.contact-container {
+	background-color: #caebf2
+}
+
 #contact {
 	background:#F9F9F9;
 	padding:25px;
@@ -47,7 +51,7 @@ body {
 }
 
 #contact h3 {
-	color: #F96;
+	color: #Ff3b3f;
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
@@ -92,7 +96,7 @@ fieldset {
 	cursor:pointer;
 	width:100%;
 	border:none;
-	background:#0CF;
+	background:#caebf2;
 	color:#FFF;
 	margin:0 0 5px;
 	padding:10px;
@@ -100,7 +104,7 @@ fieldset {
 }
 
 #contact button[type="submit"]:hover {
-	background:#09C;
+	background: #ff3b3f;
 	-webkit-transition:background 0.3s ease-in-out;
 	-moz-transition:background 0.3s ease-in-out;
 	transition:background-color 0.3s ease-in-out;
@@ -183,12 +187,6 @@ fieldset {
 }
 
 /* Truck 1 individual map */
-
-/* Truck 1 pic */
-.container {
-	position: relative;
-	width: 50%;
-  }
   
   .image {
 	display: block;
@@ -226,9 +224,6 @@ fieldset {
   }
 
 
-#truck1-p {
-	
-  }
 .container-fluid .truck1-desc {
 	background-color: black
 	
@@ -249,6 +244,95 @@ fieldset {
 }
 
 .nav-text {
-	color: orange;
+	color: #ff3b3f;
 }
 
+#carouselExampleIndicators {
+
+}
+
+.color-block {
+	height: 25em;
+	background-color: #ff3b3f;
+	/* opacity: 0.8; */
+	width: 100%;
+	margin-top: 5px;
+ }
+
+ .color-block2 {
+	height: 40em;
+	background-color: #a9a9a9;
+	/* opacity: 0.8; */
+	width: 100;
+	margin-top: 5px;
+	padding-top: 30px;
+ }
+
+ .truck1-desc {
+	 text-align: center;
+	 /* text */
+ }
+
+ #truck1-p {
+	 text-align: center;
+	 /* font-weight: bold; */
+	 color: white;
+	 /* text-decoration: underline; */
+	 text-transform: uppercase;
+	 letter-spacing: 2px;
+	 font-size: 450%;
+ }
+
+ #truck1-info {
+	text-align: center;
+	color: white;
+ }
+
+ #menu-name {
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 400%;
+	/* font-weight: bold; */
+ }
+
+ /* list view button layover image styling */
+ .container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #ff3b3f;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}

@@ -4,8 +4,8 @@ export function all(): Promise<Array<models.ISchedule>> {
     return rows('GetAllSchedules');
 }
 
-export function read(id: number): Promise<models.ISchedule> {
-    return row('GetSingleSchedule', [id]);
+export function read(trucksid: number): Promise<models.ISchedule> {
+    return row('GetSingleSchedule', [trucksid]);
 }
 
 export function create(location: string, locationname: string, dayofweek: string, lunchdinner: string, lat: number, lng: number) {

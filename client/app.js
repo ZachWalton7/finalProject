@@ -23,7 +23,7 @@ angular.module('TruckHunt', [
         templateUrl: 'views/contactus.html',
         controller: 'ContactUsController'
     })
-    .when('/list', {
+    .when('/trucks', {
         templateUrl: 'views/list.html',
         controller: 'ListController'
     })
@@ -38,6 +38,10 @@ angular.module('TruckHunt', [
     .when('/:theId', {
         templateUrl: 'views/truck.html',
         controller: 'TruckController'
+    })
+    .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignupController'
     })
     .otherwise({
         redirectTo: '/'

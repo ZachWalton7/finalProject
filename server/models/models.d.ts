@@ -1,6 +1,7 @@
 declare namespace models {
     interface ITrucks {
         id: number;
+        userid: number;
         categoryid: number;
         name: string;
         descripton: string;
@@ -13,7 +14,7 @@ declare namespace models {
     }
     interface IUsers {
         id: number;
-        truckid: number;
+        email: string;
         username: string;
         password: string;
     }

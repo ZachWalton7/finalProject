@@ -17,7 +17,6 @@ angular.module('TruckHunt.controllers', [])
         let vm = this
 
         NgMap.getMap().then(function(map) {
-            console.log('map', map);
             vm.map = map;
         });
         
@@ -28,13 +27,10 @@ angular.module('TruckHunt.controllers', [])
         vm.shops = DailySchedule.query();
 
         vm.shop = vm.shops[0];
-        console.log(vm.shop)
 
         vm.showDetail = function(e, shop){
             vm.shop = shop;
             console.log(shop);
-            console.log(vm.shop);
-            console.log(shop.truckId);
             vm.map.showInfoWindow('foo-iw', shop.truckId.toString());
             
         };
@@ -157,4 +153,21 @@ angular.module('TruckHunt.controllers', [])
         .then(() => {
             $location.replace().path('/');
         });
-    }]);
+    }])
+    .controller('SignupController', ['$scope', 'Create', '$location', 'Categories', function($scope, Create, $location, Categories){
+        $scope.categories = Categories.query();
+
+        $scope.save = function() {
+            let t = new Create({
+                name: $scope.name,
+                description: $scope.description,
+                imageurl: $scope.imageurl,
+                menuimg: $scope.menuimg
+            });
+            t.save(function(sucess) {
+                $location.path('/');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+    }])

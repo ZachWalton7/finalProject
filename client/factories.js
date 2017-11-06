@@ -28,9 +28,16 @@ angular.module('TruckHunt.factories', [])
 }])
 
 .factory('Single', ['$resource', function($resource) {
-    return $resource('/api/products/:id', {id: '@id'}, {
+    return $resource('/api/schedule/:id', {id: '@id'}, {
     });
 }])
 .factory('Menu', ['$resource', function($resource) {
     return $resource('/api/menu/:id', {id: '@id'});
+}])
+.factory('Create', ['$resource', function($resource){
+    return $resource('/api/trucks/:id', { id: '@id' },{
+        update: {
+            method: 'PUT'
+        }
+    });
 }])

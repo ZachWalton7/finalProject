@@ -31,4 +31,6 @@ angular.module('TruckHunt.factories', [])
     return $resource('/api/products/:id', {id: '@id'}, {
     });
 }])
-
+.factory('Menu', ['$resource', function($resource) {
+    return $resource('/api/menu/:id', {id: '@id'});
+}])

@@ -78,12 +78,32 @@ angular.module('TruckHunt.controllers', [])
                 });
         }
     }])
-    .controller('TruckController', ['$scope', 'Trucks', '$location', '$routeParams','NgMap','DailySchedule', 'SEOService', function ($scope, Trucks, $location, $routeParams, NgMap, DailySchedule) {
+    .controller('TruckController', [
+        '$scope',
+        'Menu',
+        'Trucks', 
+        '$location', 
+        '$routeParams',
+        'NgMap',
+        'DailySchedule', 
+        'Menu', 
+        'SEOService', function (
+            $scope, 
+            Menu,
+            Trucks, 
+            $location, 
+            $routeParams, 
+            NgMap, 
+            DailySchedule, 
+        ) {
         const route = $routeParams.theId;
-        console.log($routeParams);
-        console.log(route);
         $scope.single = DailySchedule.get({ id: route });
         console.log($scope.single);
+
+        $scope.menu = Menu.query({ id: route });
+        console.log($scope.menu)
+
+
         // SEOService.setSEO({
         //     title: $scope.dailySchedule.name,
         //     description: $scope.dailySchedule.description,

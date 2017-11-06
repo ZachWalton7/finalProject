@@ -154,10 +154,15 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
-    .controller('SignupController', ['$scope', 'Create', '$location', 'Categories', function($scope, Create, $location, Categories){
+    .controller('SignupController', ['$scope', 'Create', '$location', 'Categories', 'Users', function($scope, Create, $location, Categories, Users){
         $scope.categories = Categories.query();
 
         $scope.save = function() {
+            let u = new Users({
+                username: $scope.username,
+                email: $scope.email,
+                password: $scope.password
+            });
             let t = new Create({
                 name: $scope.name,
                 description: $scope.description,
@@ -165,9 +170,14 @@ angular.module('TruckHunt.controllers', [])
                 menuimg: $scope.menuimg
             });
             t.save(function(sucess) {
-                $location.path('/');
             }, function(err) {
                 console.log(err);
             });
+            u.save(function(sucess) {
+                $location.path('/');
+            }, function(err) {
+                console.log(err);
+                //Zach: Talk to Paul about the above
+            });
         }
-    }])
+    }]) 

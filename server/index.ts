@@ -18,6 +18,7 @@ app.use(express.static(clientPath));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+configurePassport(app);
 
 app.use('/api', apiRouter);
 

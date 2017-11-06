@@ -238,7 +238,7 @@ fieldset {
 
  .color-block2 {
 	height: 40em;
-	background-color: #a9a9a9;
+	background-color: #caebf2;
 	/* opacity: 0.8; */
 	width: 100;
 	margin-top: 5px;
@@ -258,6 +258,12 @@ fieldset {
 	 text-transform: uppercase;
 	 letter-spacing: 2px;
 	 font-size: 450%;
+ }
+
+ #truck1-menu {
+	 text-align: center;
+	 color: white;
+	 font-size: 250%;
  }
 
  #truck1-info {

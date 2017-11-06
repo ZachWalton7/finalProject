@@ -94,7 +94,8 @@ angular.module('TruckHunt.controllers', [])
             $location, 
             $routeParams, 
             NgMap, 
-            DailySchedule, 
+            DailySchedule,
+            SEOService
         ) {
         const route = $routeParams.theId;
         $scope.single = DailySchedule.get({ id: route });
@@ -104,11 +105,11 @@ angular.module('TruckHunt.controllers', [])
         console.log($scope.menu)
 
 
-        // SEOService.setSEO({
-        //     title: $scope.dailySchedule.name,
-        //     description: $scope.dailySchedule.description,
-        //     url: $location.url()
-        // });
+        SEOService.setSEO({
+            title: $scope.dailySchedule.name,
+            description: $scope.dailySchedule.description,
+            url: $location.url()
+        });
         NgMap.getMap().then(function (map) {
             console.log(map.getCenter());
             console.log('markers', map.markers);

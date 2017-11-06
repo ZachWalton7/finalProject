@@ -77,15 +77,15 @@
     <div class="color-block2">
         </br>
         <p id="menu-name">Menu</p>
-    <!-- </br> -->
+    </br>
         <h4 ng-repeat="menu in menu" id="truck1-menu">
             {{ menu.item }} {{ menu.cost | currency }} </h4>
     </div>
 </div>
 
 <div class="truck1-map">
-    <ng-map id="truck1-map" center="[{{ single.lat }}, {{ single.lng }}]">
-        <marker icon="http://cdn.mysitemyway.com/icons-watermarks/simple-black/iconathon/iconathon_food-truck/iconathon_food-truck_simple-black_96x96.png"
+    <ng-map id="truck1-map" center="[{{ single.lat }}, {{ single.lng }}]" styles="[{elementType:'geometry',stylers:[{color:'#f5f5f5'}]},{elementType:'labels.icon',stylers:[{visibility:'off'}]},{elementType:'labels.text.fill',stylers:[{color:'#616161'}]},{elementType:'labels.text.stroke',stylers:[{color:'#f5f5f5'}]},{featureType:'administrative.land_parcel',elementType:'labels.text.fill',stylers:[{color:'#bdbdbd'}]},{featureType:'poi',elementType:'geometry',stylers:[{color:'#eeeeee'}]},{featureType:'poi',elementType:'labels.text.fill',stylers:[{color:'#757575'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#e5e5e5'}]},{featureType:'poi.park',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]},{featureType:'road',elementType:'geometry',stylers:[{color:'#ffffff'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#dcdcdc'}]},{featureType:'road.arterial',elementType:'labels.icon',stylers:[{visibility:'on'}]},{featureType:'road.arterial',elementType:'labels.text.fill',stylers:[{color:'#757575'}]},{featureType:'road.highway',elementType:'geometry',stylers:[{color:'#dadada'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#b0b0b0'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#eae8ed'}]},{featureType:'road.highway',elementType:'labels.icon',stylers:[{visibility:'on'}]},{featureType:'road.highway',elementType:'labels.text.fill',stylers:[{color:'#616161'}]},{featureType:'road.local',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]},{featureType:'transit.line',elementType:'geometry',stylers:[{color:'#e5e5e5'}]},{featureType:'transit.station',elementType:'geometry',stylers:[{color:'#eeeeee'}]},{featureType:'water',elementType:'geometry',stylers:[{color:'#c9c9c9'}]},{featureType:'water',elementType:'geometry.fill',stylers:[{color:'#bfe6ee'}]},{featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]}]">
+        <marker icon="/images/truckicon.png"
             position="{{ single.lat }}, {{ single.lng }}" title="{{ single.name }}"></marker>
     </ng-map>
 </div>

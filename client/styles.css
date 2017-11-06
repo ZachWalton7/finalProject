@@ -142,7 +142,6 @@ fieldset {
     height: 10em;
     line-height: 60px;
 	background-color: #A9A9A9;
-	margin-top: 2em;
     /* background-image: url("/images/Newlogo.png") no-repeat; */
 }
 
@@ -380,24 +379,7 @@ fieldset {
 	opacity: 1;  
 }
 
-.collage-two:hover .pink-overlay {
-	opacity: 1;  
-}
-
 .collage-overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	transition: .5s ease;
-	background-color: #caebf2;
-  }
-
-  .pink-overlay {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -480,4 +462,47 @@ fieldset {
 	font-size: 18px;
 }
 
+.main-send {
+	text-align: center;
+	padding-right: 2em;
+	padding-left: 2em;
+	padding-bottom: 3em;
+}
 
+.main-donate {
+	text-align: center;
+	padding-right: 2em;
+	padding-left: 2em;
+	padding-bottom: 3em;
+}
+
+.main-join {
+	text-align: center;
+	padding-right: 2em;
+	padding-left: 2em;
+	padding-bottom: 3em;
+}
+
+.icon-container {
+	width: 100%;
+	color: #ff3b3f;
+}
+
+.about-us {
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+
+.main-button {
+	background-color: #FF3B3F;
+	color: #CAEBF2;
+	font-weight: bold;
+	border-style: none;
+	width: 50%;
+	margin-top: 1.5em;
+	text-transform: uppercase;
+}
+
+.main-about-us {
+	background-color: #caebf2;
+}

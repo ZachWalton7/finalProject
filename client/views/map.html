@@ -2,21 +2,18 @@
 
 <div class="map-container">
     <div ng-controller="MapController as vm">
-        <ng-map id="main-map" zoom="14" center="[33.523358, -86.802514]"       
-        styles="[{elementType:'geometry',stylers:[{color:'#f5f5f5'}]},{elementType:'labels.icon',stylers:[{visibility:'off'}]},{elementType:'labels.text.fill',stylers:[{color:'#616161'}]},{elementType:'labels.text.stroke',stylers:[{color:'#f5f5f5'}]},{featureType:'administrative.land_parcel',elementType:'labels.text.fill',stylers:[{color:'#bdbdbd'}]},{featureType:'poi',elementType:'geometry',stylers:[{color:'#eeeeee'}]},{featureType:'poi',elementType:'labels.text.fill',stylers:[{color:'#757575'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#e5e5e5'}]},{featureType:'poi.park',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]},{featureType:'road',elementType:'geometry',stylers:[{color:'#ffffff'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#dcdcdc'}]},{featureType:'road.arterial',elementType:'labels.icon',stylers:[{visibility:'on'}]},{featureType:'road.arterial',elementType:'labels.text.fill',stylers:[{color:'#757575'}]},{featureType:'road.highway',elementType:'geometry',stylers:[{color:'#dadada'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#b0b0b0'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#eae8ed'}]},{featureType:'road.highway',elementType:'labels.icon',stylers:[{visibility:'on'}]},{featureType:'road.highway',elementType:'labels.text.fill',stylers:[{color:'#616161'}]},{featureType:'road.local',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]},{featureType:'transit.line',elementType:'geometry',stylers:[{color:'#e5e5e5'}]},{featureType:'transit.station',elementType:'geometry',stylers:[{color:'#eeeeee'}]},{featureType:'water',elementType:'geometry',stylers:[{color:'#c9c9c9'}]},{featureType:'water',elementType:'geometry.fill',stylers:[{color:'#bfe6ee'}]},{featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]}]">
-            <marker id="{{ shop.truckId }}" position="[{{ shop.lat }}, {{ shop.lng }}]" ng-repeat="shop in vm.shops"  title="{{ shop.truckName }}"
+        <ng-map id="main-map" zoom="14" center="[33.523358, -86.802514]" styles="[{elementType:'geometry',stylers:[{color:'#f5f5f5'}]},{elementType:'labels.icon',stylers:[{visibility:'off'}]},{elementType:'labels.text.fill',stylers:[{color:'#616161'}]},{elementType:'labels.text.stroke',stylers:[{color:'#f5f5f5'}]},{featureType:'administrative.land_parcel',elementType:'labels.text.fill',stylers:[{color:'#bdbdbd'}]},{featureType:'poi',elementType:'geometry',stylers:[{color:'#eeeeee'}]},{featureType:'poi',elementType:'labels.text.fill',stylers:[{color:'#757575'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#e5e5e5'}]},{featureType:'poi.park',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]},{featureType:'road',elementType:'geometry',stylers:[{color:'#ffffff'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#dcdcdc'}]},{featureType:'road.arterial',elementType:'labels.icon',stylers:[{visibility:'on'}]},{featureType:'road.arterial',elementType:'labels.text.fill',stylers:[{color:'#757575'}]},{featureType:'road.highway',elementType:'geometry',stylers:[{color:'#dadada'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#b0b0b0'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#eae8ed'}]},{featureType:'road.highway',elementType:'labels.icon',stylers:[{visibility:'on'}]},{featureType:'road.highway',elementType:'labels.text.fill',stylers:[{color:'#616161'}]},{featureType:'road.local',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]},{featureType:'transit.line',elementType:'geometry',stylers:[{color:'#e5e5e5'}]},{featureType:'transit.station',elementType:'geometry',stylers:[{color:'#eeeeee'}]},{featureType:'water',elementType:'geometry',stylers:[{color:'#c9c9c9'}]},{featureType:'water',elementType:'geometry.fill',stylers:[{color:'#bfe6ee'}]},{featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#9e9e9e'}]}]">
+            <marker id="{{ shop.truckId }}" position="[{{ shop.lat }}, {{ shop.lng }}]" ng-repeat="shop in vm.shops" title="{{ shop.truckName }}"
                 on-click="vm.showDetail(shop)" icon="/images/truckicon.png"></marker>
 
             <info-window id="foo-iw">
                 <div>
-                <h3 id="truck-name">{{vm.shop.truckName}}</h3>
-                Category: {{vm.shop.categoryName}} <br/>
-                Description: {{vm.shop.truckDescription}}<br/>
-                Time: {{vm.shop.lunchdinner}}<br/>
-                <a ng-href="/{{vm.shop.truckId}}">Click Here</a>
+                    <h3 id="truck-name">{{vm.shop.truckName}}</h3>
+                    Category: {{vm.shop.categoryName}} <br/> Description: {{vm.shop.truckDescription}}<br/> Time: {{vm.shop.lunchdinner}}<br/>
+                    <a ng-href="/{{vm.shop.truckId}}">Click Here</a>
                 </div>
             </info-window>
-    
+
         </ng-map>
     </div>
 </div>
@@ -28,21 +25,108 @@
 <div class="feature-container">
     <div class="left collage">
         <div class="collage-overlay">
-            <div class="collage-text"><h3>Big Spoon Creamery</h3></div>
+            <div class="collage-text">
+                <h3>Big Spoon Creamery</h3>
+            </div>
         </div>
     </div>
-    <div class="top-right collage-two">
-        <div class="pink-overlay">
-            <div class="collage-text"><h3>Cantina on Wheels</h3></div>
+    <div class="top-right collage">
+        <div class="collage-overlay">
+            <div class="collage-text">
+                <h3>Cantina on Wheels</h3>
+            </div>
         </div>
     </div>
     <div class="bottom-right collage">
         <div class="collage-overlay">
-            <div class="collage-text"><h3>Dreamland BBQ</h3></div>
+            <div class="collage-text">
+                <h3>Dreamland BBQ</h3>
+            </div>
         </div>
 
     </div>
 
+</div>
+
+<div class="container-fluid main-about-us">
+    <div class="container about-us">
+    <div class="row">
+        <div class="col-md main-send">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Got a question?</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="fa fa-send-o fa-5x icon-container"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 main-description">
+                    We've got answers! Fill out our contact form and we'll get back to you ASAP.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <form style="display: inline" action="/contactus" method="get">
+                        <button class="main-button">Contact Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md main-donate">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Want to help?</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="fa fa-heart-o fa-5x icon-container"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 main-description">
+                    Help us keep this site ad-free by making a donation. We promise we won't spend it on food.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form style="display: inline" action="/donate" method="get">
+                        <button class="main-button">Donate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md main-join">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Get on the map!</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="fa fa-map-marker fa-5x icon-container"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 main-description">
+                    Join our growing network of food trucks and make it easier for customers to find you!
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form style="display: inline" action="/signup" method="get">
+                        <button class="main-button">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 </div>
 
 <footer-nav></footer-nav>

@@ -34,3 +34,10 @@ angular.module('TruckHunt.factories', [])
 .factory('Menu', ['$resource', function($resource) {
     return $resource('/api/menu/:id', {id: '@id'});
 }])
+.factory('Create', ['$resource', function($resource){
+    return $resource('/api/trucks/:id', { id: '@id' },{
+        update: {
+            method: 'PUT'
+        }
+    });
+}])

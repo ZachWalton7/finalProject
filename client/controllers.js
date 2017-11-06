@@ -157,4 +157,21 @@ angular.module('TruckHunt.controllers', [])
         .then(() => {
             $location.replace().path('/');
         });
-    }]);
+    }])
+    .controller('SignupController', ['$scope', 'Create', '$location', 'Categories', function($scope, Create, $location, Categories){
+        $scope.categories = Categories.query();
+
+        $scope.save = function() {
+            let t = new Create({
+                name: $scope.name,
+                description: $scope.description,
+                imageurl: $scope.imageurl,
+                menuimg: $scope.menuimg
+            });
+            t.save(function(sucess) {
+                $location.path('/');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+    }])

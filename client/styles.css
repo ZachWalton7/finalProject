@@ -514,3 +514,75 @@ social media buttons
 .main-about-us {
 	background-color: #caebf2;
 }
+
+/* donation page */
+.donation-page {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.donation-header {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	background-color: #FF3B3F;
+	height: 200px;
+	width: 100%;
+	margin-top: 5em;
+}
+
+#header-p {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	color: white; 
+	font-size: 400%;
+	text-align: center;
+
+
+}
+
+.donation-table {
+	display: table;
+	height: 100%;
+	margin: 0 auto;
+
+}
+
+.donation-container {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	background:#F9F9F9;
+	padding:25px;
+	margin:50px 0;
+}
+
+.outside-donation-container {
+	display: table-cell;
+	vertical-align: middle;
+	max-width: 1000px;
+}
+
+.payment {
+	color: #FF3B3F;
+	text-align: center;
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+}
+
+#donate-button[type="submit"] {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:#caebf2;
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	font-size:15px;
+}
+
+#donate-button[type="submit"]:hover {
+	background: #ff3b3f;
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#donate-button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); 
+}
+

@@ -1,11 +1,26 @@
 <main-navigation></main-navigation>
-<div class="jumbotron">
-<h1>Plz give us all the money</h1>
-</div>
 
-        <div class="col-md-8 payment-form">
+<div class="donation-page">
+
+    <div class="donation-table">
+<!-- <div class="jumbotron">
+<h1>Plz give us all the money</h1>
+</div> -->
+
+<!-- <div class="donation-header">
+<p id="header-p"> Love Truck Hunt? </p>
+<h6>  Help us keep this site ad-free by making a donation </h6>
+</div> -->
+
+<div class="outside-donation-container">
+        <div class="donation-header">
+                <p id="header-p"> Love Truck Hunt? </p>
+                <h6>  Help us keep this site ad-free by making a donation </h6>
+                </div>
+<div class="donation-container">
+        <div class="col-md-12 payment-form">
             <form class="my-form" ng-submit="process()">
-                <h3>
+                <h3 class="payment">
                     <label for="card-field"> Payment Method</label>
                 </h3>
                 <div class="form-group">
@@ -17,6 +32,11 @@
                     <div id="card-field" class="form-control"></div>
                 </div>
                 <p>{{ error }}</p>
-                <input type="submit" value="Place Order!">
+                <input type="submit" id="donate-button" value="Donate!">
             </form>
         </div>
+    </div>
+</div>
+</div>
+</div>
+    <footer-nav></footer-nav>

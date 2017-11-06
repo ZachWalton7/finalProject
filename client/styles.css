@@ -229,7 +229,7 @@ social media buttons
 }
 
 .color-block {
-	height: 25em;
+	height: 20em;
 	background-color: #ff3b3f;
 	/* opacity: 0.8; */
 	width: 100%;
@@ -237,7 +237,7 @@ social media buttons
  }
 
  .color-block2 {
-	height: 40em;
+	height: 38em;
 	background-color: #caebf2;
 	/* opacity: 0.8; */
 	width: 100;
@@ -262,8 +262,9 @@ social media buttons
 
  #truck1-menu {
 	 text-align: center;
-	 color: white;
-	 font-size: 250%;
+	 color: #777;
+	 text-transform: capitalize;
+	 line-height: 1.8;
  }
 
  #truck1-info {
@@ -273,7 +274,7 @@ social media buttons
 
  #menu-name {
 	text-align: center;
-	color: white;
+	color: #777;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 400%;

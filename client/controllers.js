@@ -17,7 +17,6 @@ angular.module('TruckHunt.controllers', [])
         let vm = this
 
         NgMap.getMap().then(function(map) {
-            console.log('map', map);
             vm.map = map;
         });
         
@@ -28,13 +27,10 @@ angular.module('TruckHunt.controllers', [])
         vm.shops = DailySchedule.query();
 
         vm.shop = vm.shops[0];
-        console.log(vm.shop)
 
         vm.showDetail = function(e, shop){
             vm.shop = shop;
             console.log(shop);
-            console.log(vm.shop);
-            console.log(shop.truckId);
             vm.map.showInfoWindow('foo-iw', shop.truckId.toString());
             
         };

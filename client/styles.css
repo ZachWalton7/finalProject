@@ -586,3 +586,29 @@ social media buttons
 #donate-button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); 
 }
 
+
+/* TRUCKS LIST */
+
+.truck-row {
+	margin-bottom: 3em;
+	padding: 2em;
+}
+
+.trucks-container {
+	width: 80%;
+	margin-top: 3em;
+}
+
+.truck-listname {
+	text-transform: uppercase;
+	color: #FF3B3F;
+	font-weight: bold;
+}
+
+.watermelon-button {
+	height: 3em;
+	width: 30%;
+	line-height: 3em;
+	background-color: #FF3B3F;
+	text-align: center;
+}

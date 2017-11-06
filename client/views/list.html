@@ -1,11 +1,27 @@
 <main-navigation></main-navigation>
-<h3>All Trucks</h3>
-<div ng-repeat="truck in trucks" class="container list-container">
-  <img src="/images/Big-Spoon-Creamery.jpg" style="width:100%">
-  <div class="middle">
-      <a ng-href="/{{ truck.id }}">
-    <div class="text">{{ truck.name }}
-        </a>
+<div class="container trucks-container">
+    <div ng-repeat="truck in trucks" class="row truck-row">
+        <div class="col-sm-4">
+            <img src="/images/Big-Spoon-Creamery.jpg" style="width:100%">
+        </div>
+        <div class="col-sm-8">
+            <h3 class="truck-listname">{{ truck.truckName }}</h3>
+            <h6>Category: {{ truck.categoryName }}</h6>
+            <br>
+            <h6>{{ truck.description }}</h6>
+        <!-- <div class="middle">
+            <a ng-href="/{{ truck.id }}">
+                <div class="text">{{ truck.name }}
+            </a> -->
+            <a ng-href="/{{truck.id}}">
+                <div class="watermelon-button">More Info</div>
+            </a>
+            <!-- <form style="display: inline" action="/{{ truck.id }}" method="get">
+                <button class="main-button">More Info</button>
+            </form> -->
+
+        </div>
     </div>
-  </div>
 </div>
+
+<footer-nav></footer-nav>

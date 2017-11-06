@@ -86,7 +86,6 @@ angular.module('TruckHunt.controllers', [])
         '$routeParams',
         'NgMap',
         'DailySchedule', 
-        'Menu', 
         'SEOService', function (
             $scope, 
             Menu,
@@ -102,18 +101,20 @@ angular.module('TruckHunt.controllers', [])
         console.log($scope.single);
 
         $scope.menu = Menu.query({ id: route });
-        console.log($scope.menu)
+        console.log($scope.menu);
 
 
-        SEOService.setSEO({
-            title: $scope.dailySchedule.name,
-            description: $scope.dailySchedule.description,
-            url: $location.url()
-        });
+        
         NgMap.getMap().then(function (map) {
             console.log(map.getCenter());
             console.log('markers', map.markers);
             console.log('shapes', map.shapes);
+        });
+
+        SEOService.setSEO({
+            title: $scope.single.truckName,
+            description: $scope.single.truckDescription,
+            url: $location.url()
         });
     }])
     .controller('ListController', ['$scope', 'Trucks', 'SEOService', '$location', function ($scope, Trucks, SEOService, $location) {

@@ -36,9 +36,6 @@ router.get('/', (req, res) => {
     });
 });
 
-router.all('*', auth.isLoggedIn);
-
-
 
 router.post('/', (req, res) => {
     utils.encryptPassword(req.body.password)
@@ -64,5 +61,5 @@ router.get('/logout', (req, res) => {
         });
     }
 });
-
+router.all('*', auth.isLoggedIn);
 export default router;

@@ -206,3 +206,9 @@ angular.module('TruckHunt.controllers', [])
         });
     }
     }])
+    .controller('LogoutController', ['$location', 'UserService', function($location, UserService) {
+        UserService.logout()
+        .then(() => {
+            $location.replace().path('/');
+        });
+    }])

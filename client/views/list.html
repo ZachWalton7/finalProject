@@ -2,7 +2,7 @@
 <div class="container trucks-container">
     <div ng-repeat="truck in trucks" class="row truck-row">
         <div class="col-sm-4">
-            <img src="/images/Big-Spoon-Creamery.jpg" style="width:100%">
+            <img ng-src="{{ truck.imgone }}" style="width:100%">
         </div>
         <div class="col-sm-8">
             <h3 class="truck-listname">{{ truck.truckName }}</h3>
@@ -13,7 +13,7 @@
             <a ng-href="/{{ truck.id }}">
                 <div class="text">{{ truck.name }}
             </a> -->
-            <a ng-href="/{{truck.id}}">
+            <a ng-href="/{{truck.id}}" class="list-btn">
                 <div class="watermelon-button">More Info</div>
             </a>
             <!-- <form style="display: inline" action="/{{ truck.id }}" method="get">

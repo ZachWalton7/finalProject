@@ -2,41 +2,51 @@
 
 <div class="donation-page">
 
-    <div class="donation-table">
-<!-- <div class="jumbotron">
-<h1>Plz give us all the money</h1>
-</div> -->
+        <div class="color-stripe">
+                <div class="color-block3">
+                    </div>
+                </div>
+                <!-- <figure>
+                        <img itemprop="image" src="/images/truck-gif.gif" alt="melbourne-food-trucks" width="740" height="486">
+                </figure> -->
 
-<!-- <div class="donation-header">
-<p id="header-p"> Love Truck Hunt? </p>
-<h6>  Help us keep this site ad-free by making a donation </h6>
-</div> -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="donation-table">
 
-<div class="outside-donation-container">
-        <div class="donation-header">
-                <p id="header-p"> Love Truck Hunt? </p>
-                <h6>  Help us keep this site ad-free by making a donation </h6>
+                <div class="donation-header">
+                    </br>
+                    <p id="header-p"> Love Truck Hunt? </p>
+                    <h4 id="header-h4">
+                        </br>Help us keep this site ad-free by making a donation. </h4>
+                    </br>
+                    <div class="truckicon"></div>
                 </div>
-<div class="donation-container">
-        <div class="col-md-12 payment-form">
-            <form class="my-form" ng-submit="process()">
-                <h3 class="payment">
-                    <label for="card-field"> Payment Method</label>
-                </h3>
-                <div class="form-group">
-                    <label for="amount-field">Amount</label>
-                    <input id="amount-field" type="number" class="form-control" ng-model="amount">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="donation-container">
+                <div class="col-md-12 payment-form">
+                    <form class="my-form" ng-submit="process()">
+                        <h3 class="payment">
+                            <label for="card-field"> Payment Method</label>
+                        </h3>
+                        <div class="form-group">
+                            <label for="amount-field">Amount</label>
+                            <input id="amount-field" type="number" class="form-control" ng-model="amount">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-field">Credit Card</label>
+                            <div id="card-field" class="form-control"></div>
+                        </div>
+                        <p>{{ error }}</p>
+                        <input type="submit" id="donate-button" value="Donate!">
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="card-field">Credit Card</label>
-                    <div id="card-field" class="form-control"></div>
-                </div>
-                <p>{{ error }}</p>
-                <input type="submit" id="donate-button" value="Donate!">
-            </form>
+            </div>
+
         </div>
     </div>
 </div>
 </div>
-</div>
-    <footer-nav></footer-nav>
+<footer-nav></footer-nav>

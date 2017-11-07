@@ -41,7 +41,8 @@ angular.module('TruckHunt', [
     })
     .when('/createTruck', {
         templateUrl: 'views/createTruck.html',
-        controller: 'CreateTruckController'
+        controller: 'CreateTruckController',
+        requiresLogin: true
     })
     .when('/user/:id/menuUpdate', {
         templateUrl: 'views/menuUpdate.html',
@@ -54,4 +55,12 @@ angular.module('TruckHunt', [
     .otherwise({
         redirectTo: '/'
     });
-}]);
+}])
+.run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
+        if (nextRoute.$$route && nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
+            event.preventDefault();
+            UserService.loginRedirect();
+        }
+    });
+ }]);

@@ -612,3 +612,28 @@ social media buttons
 	background-color: #FF3B3F;
 	text-align: center;
 }
+
+/* 
+#checkout-form {
+    position: left;
+    float: left;
+    text-align: left;
+    margin: auto;
+    padding-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 30%;
+    width: 25%;
+    background-color: transparent;
+}
+
+#checkout-box {
+    position: center;
+    float: center;
+    margin: auto;
+    padding-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 30%;
+    width: 25%;
+    outline: 5px, black;
+    background-color: transparent;
+} */

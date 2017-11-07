@@ -3,12 +3,12 @@
 <div id="user-list">
     <h3>Update Menu</h3>
     <form>
-        <div ng-repeat="menu in menu" class="form-group">
+        <div ng-repeat="menu in menus" class="form-group">
             <label for="firstName">Menu Item Name</label>
             <input class="form-control" ng-model="menu.item" id="item"></input>
             <label for="firstName">Update {{ menu.item }} Price</label>
             <input class="form-control" ng-model="menu.cost" id="item"></input>
-            <button type="button" class="btn btn-danger" ng-click="updateMenu()">Remove Item</button>
+            <button type="button" class="btn btn-danger" ng-click="updateMenu(menu.idmenus)">Remove Item</button>
         </div>
 
         <button type="button" class="btn btn-danger" ng-click="updateMenu()">Update</button>

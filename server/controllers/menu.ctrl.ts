@@ -14,4 +14,14 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+    procedures.update(req.params.idMenus, req.body.item, req.body.cost)
+    .then((item) =>{
+        res.send(item);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    })
+})
+
 export default router;

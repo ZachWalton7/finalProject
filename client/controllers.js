@@ -154,6 +154,23 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
+    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', function($scope, $routeParams, Menu){
+        const idToGet = $routeParams.id
+        console.log(idToGet)
+        function getMenu(){
+            $scope.menu = Menu.query({ id: idToGet })
+        };
+
+        getMenu();
+        
+        console.log($scope.menu)
+
+        // $scope.updateMenu = function () {
+        //     $scope.menu.$update(function () {
+        //         $location.path('user/1/menuUpdate');
+        //     });
+        // };
+    }])
     .controller('SignupController', ['$scope', 'Create', '$location', 'Categories', 'Users', function($scope, Create, $location, Categories, Users){
         $scope.categories = Categories.query();
 

@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    procedures.create(req.body.userid, req.body.category, req.body.name, req.body.description, req.body.imgone, req.body.imgtwo, req.body.imgthree)
+    procedures.create(req.body.userid, req.body.categoryid, req.body.name, req.body.description, req.body.imgone, req.body.imgtwo, req.body.imgthree)
     .then((response) => {
         res.send(response);
     }).catch((e) => {
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    procedures.update(req.params.id, req.body.userid, req.body.category, req.body.name, req.body.description, req.body.imgone, req.body.imgtwo, req.body.imgthree)
+    procedures.update(req.params.id, req.body.userid, req.body.categoryid, req.body.name, req.body.description, req.body.imgone, req.body.imgtwo, req.body.imgthree)
     .then(() => {
         res.sendStatus(204);
     }).catch((e) => {

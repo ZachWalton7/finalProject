@@ -1,7 +1,7 @@
 import { row, rows, empty } from '../config/db';
 
 export function all(): Promise<Array<models.ICategories>> {
-    return rows('GetAllCayegories');
+    return rows('GetAllCategories');
 }
 
 export function read(id: number): Promise<models.ICategories> {

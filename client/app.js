@@ -39,6 +39,10 @@ angular.module('TruckHunt', [
         templateUrl: 'views/signup.html',
         controller: 'SignupController'
     })
+    .when('/createTruck', {
+        templateUrl: 'views/createTruck.html',
+        controller: 'CreateTruckController'
+    })
     .when('/user/:id/menuUpdate', {
         templateUrl: 'views/menuUpdate.html',
         controller: 'MenuUpdate'

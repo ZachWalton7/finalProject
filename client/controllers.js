@@ -171,8 +171,7 @@ angular.module('TruckHunt.controllers', [])
         //     });
         // };
     }])
-    .controller('SignupController', ['$scope', 'Create', '$location', 'Categories', 'Users', function($scope, Create, $location, Categories, Users){
-        $scope.categories = Categories.query();
+    .controller('SignupController', ['$scope', '$location', 'Users', function($scope, $location, Users){
 
         $scope.save = function() {
             let u = new Users({
@@ -180,22 +179,30 @@ angular.module('TruckHunt.controllers', [])
                 email: $scope.email,
                 password: $scope.password
             });
-            let t = new Create({
-                name: $scope.name,
-                description: $scope.description,
-                imgone: $scope.imgone,
-                imgtwo: $scope.imgtwo,
-                imgthree: $scope.imgthree
-            });
-            t.save(function(sucess) {
-            }, function(err) {
-                console.log(err);
-            });
-            u.save(function(sucess) {
+            u.$save(function(sucess) {
                 $location.path('/');
             }, function(err) {
                 console.log(err);
-                //Zach: Talk to David or Paul about the above
             });
         }
     }]) 
+    .controller('CreateTruckController', ['$scope', '$location', 'Categories', 'Users', 'Create', function($scope, $location, Categories, Users, Create){
+        $scope.categories = Categories.query();
+        $scope.users = Users.query();
+        $scope.save = function() {
+        let t = new Create({
+            userid: $scope.userid,
+            categoryid: $scope.categoryid,
+            name: $scope.name,
+            description: $scope.description,
+            imgone: $scope.imgone,
+            imgtwo: $scope.imgtwo,
+            imgthree: $scope.imgthree
+        });
+        t.$save(function(sucess) {
+            $location.path('/');
+        }, function(err) {
+            console.log(err);
+        });
+    }
+    }])

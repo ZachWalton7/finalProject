@@ -1,0 +1,33 @@
+<main-navigation></main-navigation>
+<form ng-submit="save()">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="name" placeholder="Enter Truck Name"/>
+    </div>
+    <div class="form-group form-row">
+        <div class="col">
+            <select class="form-control" ng-model="categoryid">
+                <option value="">Select a Category</option>
+                <option value="{{ c.id }}" ng-repeat="c in categories">{{ c.name }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-control" ng-model="userid">
+                <option value="">Select a User</option>
+                <option value="{{ u.id }}" ng-repeat="u in users">{{ u.username }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="description" placeholder="Enter Your Truck's Description Here!"/>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="imgone" placeholder="Paste Your First Image URL Here"/>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="imgtwo" placeholder="Paste Your Second Image URL Here"/>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="imgthree" placeholder="Paste Your Third Image URL Here"/>
+    </div>
+    <button class="btn btn-success btn-lg">Save</button>
+</form>

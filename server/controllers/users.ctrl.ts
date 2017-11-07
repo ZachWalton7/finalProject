@@ -25,10 +25,7 @@ router.post('/login', (req, res, next) => {
             }
         });
     })(req, res, next);
-});
-
-router.all('*', auth.isLoggedIn);
-
+})
 router.get('/', (req, res) => {
     procedures.all()
     .then((users) => {
@@ -38,6 +35,10 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 });
+
+router.all('*', auth.isLoggedIn);
+
+
 
 router.post('/', (req, res) => {
     utils.encryptPassword(req.body.password)

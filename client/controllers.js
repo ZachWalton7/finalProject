@@ -166,8 +166,9 @@ angular.module('TruckHunt.controllers', [])
             let t = new Create({
                 name: $scope.name,
                 description: $scope.description,
-                imageurl: $scope.imageurl,
-                menuimg: $scope.menuimg
+                imgone: $scope.imgone,
+                imgtwo: $scope.imgtwo,
+                imgthree: $scope.imgthree
             });
             t.save(function(sucess) {
             }, function(err) {
@@ -177,7 +178,7 @@ angular.module('TruckHunt.controllers', [])
                 $location.path('/');
             }, function(err) {
                 console.log(err);
-                //Zach: Talk to Paul about the above
+                //Zach: Talk to David or Paul about the above
             });
         }
     }]) 

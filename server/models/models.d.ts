@@ -5,8 +5,9 @@ declare namespace models {
         categoryid: number;
         name: string;
         descripton: string;
-        imageurl: string;
-        menuimg: string;
+        imgone: string;
+        imgtwo: string;
+        imgthree: string;
     }
     interface ICategories {
         id: number;

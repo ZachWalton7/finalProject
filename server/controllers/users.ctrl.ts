@@ -25,7 +25,31 @@ router.post('/login', (req, res, next) => {
             }
         });
     })(req, res, next);
-})
+});
+
+
+router.post('/', (req, res) => {
+    utils.encryptPassword(req.body.password)
+    .then((hash) => {
+        return procedures.create(req.body.username, req.body.email, hash);
+    }).then((response) => {
+        return procedures.read(response.id)
+    }).then((user) => {
+        req.logIn(user, (err) => {
+            if (err) {
+                console.log(err);
+                return res.sendStatus(500);
+            } else {
+                delete user.password;
+                return res.send(user);
+            }
+        });
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
+});
+
 router.get('/', (req, res) => {
     procedures.all()
     .then((users) => {
@@ -37,17 +61,7 @@ router.get('/', (req, res) => {
 });
 
 
-router.post('/', (req, res) => {
-    utils.encryptPassword(req.body.password)
-    .then((hash) => {
-        return procedures.create(req.body.username, req.body.email, hash);
-    }).then((id) => {
-        res.send(id);
-    }).catch((e) => {
-        console.log(e);
-        res.sendStatus(500);
-    });
-});
+router.all('*', auth.isLoggedIn);
 
 router.get('/me', (req, res) => {
     res.send(req.user);
@@ -61,5 +75,4 @@ router.get('/logout', (req, res) => {
         });
     }
 });
-router.all('*', auth.isLoggedIn);
 export default router;

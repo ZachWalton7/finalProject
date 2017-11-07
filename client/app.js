@@ -44,6 +44,11 @@ angular.module('TruckHunt', [
         controller: 'CreateTruckController',
         requiresLogin: true
     })
+    .when('/truckOwners', {
+        templateUrl: 'views/truckOwners.html',
+        controller: 'TruckOwnersController',
+        requiresLogin: true
+    })
     .when('/user/:id/menuUpdate', {
         templateUrl: 'views/menuUpdate.html',
         controller: 'MenuUpdate'
@@ -51,7 +56,7 @@ angular.module('TruckHunt', [
     .when('/:theId', {
         templateUrl: 'views/truck.html',
         controller: 'TruckController'
-    })
+    }) 
     .otherwise({
         redirectTo: '/'
     });

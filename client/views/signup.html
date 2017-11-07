@@ -1,1 +1,17 @@
-<main-navigation></main-navigation>
+<div class="contact-container">
+    <main-navigation></main-navigation>
+    <div class="form-container">
+        <form ng-submit="save()">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="username" placeholder="Create a Username" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="email" placeholder="Enter Your Email Address" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="password" placeholder="Enter Your Password" />
+            </div>
+            <button class="btn btn-info btn-lg">Create</button>
+        </form>
+    </div>
+</div>

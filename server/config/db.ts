@@ -1,7 +1,7 @@
 import * as mysql from 'mysql';
 
 export let pool = mysql.createPool({
-    connectionLimit: 10,
+    connectionLimit: 2,
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,

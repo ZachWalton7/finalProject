@@ -26,7 +26,7 @@ export default function configurePassport(app: express.Express) {
                     return done(null, false, { message: 'Invalid login' });
                 }
             });
-        }, (err) => {
+        }).catch((err) => {
             return done(err);
         });
     }));
@@ -38,6 +38,7 @@ export default function configurePassport(app: express.Express) {
     passport.deserializeUser((id: number, done) => {
         userProc.read(id)
         .then((user) => {
+            done(null, user);
         }, (err) => {
             done(err);
         });

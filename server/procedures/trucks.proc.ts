@@ -16,10 +16,10 @@ export function userread(userid: number): Promise<models.ITrucks> {
     return row('GetTruckByUserID', [userid]);
 }
 
-export function update(id: number, userid: number, categoryid: number, name: string, description: string, imageurl: string, menuimg: string) {
-    return empty('UpdateTruck', [id, userid, categoryid, name, description, imageurl, menuimg]);
+export function update(id: number, userid: number, categoryid: number, name: string, description: string, imgone: string, imgtwo: string, imgthree: string) {
+    return empty('UpdateTruck', [id, userid, categoryid, name, description, imgone, imgtwo, imgthree]);
 }
 
-export function create(userid: number, categoryid: number, name: string, description: string, imageurl: string, menuimg: string) {
-    return row('InsertTruck', [userid, categoryid, name, description, imageurl, menuimg]);
+export function create(userid: number, categoryid: number, name: string, description: string, imgone: string, imgtwo: string, imgthree: string) {
+    return row('InsertTruck', [userid, categoryid, name, description, imgone, imgtwo, imgthree]);
 }

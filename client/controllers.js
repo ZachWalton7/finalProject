@@ -92,6 +92,9 @@ angular.module('TruckHunt.controllers', [])
             DailySchedule,
             SEOService
         ) {
+
+        $('.carousel').carousel();
+        
         const route = $routeParams.theId;
         $scope.single = DailySchedule.get({ id: route });
         console.log($scope.single);
@@ -154,22 +157,32 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
-    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', function($scope, $routeParams, Menu){
+    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', function($scope, $routeParams, Menu, UserService){
+        $scope.user = UserService.me()
+        .then((me) => {
+            // redirect();
+            console.log(me);
+        });
+        
+        console.log($scope.user.id);
+
         const idToGet = $routeParams.id
         console.log(idToGet)
         function getMenu(){
-            $scope.menu = Menu.query({ id: idToGet })
+            $scope.menus = Menu.query({ id: idToGet })
         };
-
         getMenu();
-        
-        console.log($scope.menu)
 
-        // $scope.updateMenu = function () {
-        //     $scope.menu.$update(function () {
-        //         $location.path('user/1/menuUpdate');
-        //     });
-        // };
+        console.log($scope.user);
+        
+        console.log($scope.menu);
+        $scope.updateMenu = function (menuid) {
+            $scope.singleItem = Menu.get({ id, menuid });
+            console.log($scope.singleItem)
+            $scope.singleItem.$update(function () {
+                // $location.path('user/1/menuUpdate/13');
+            });
+        };
     }])
     .controller('SignupController', ['$scope', '$location', 'Users', function($scope, $location, Users){
 
@@ -212,3 +225,12 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
+    .controller('TruckOwnersController', ['$scope','$location', function($scope, $location){
+        $scope.createTruck = function() {
+            $location.path('/createTruck');
+        };
+        $scope.updteMenu = function() {
+            $location.path('/updateMenu');
+        }
+    }])
+    

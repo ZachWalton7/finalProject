@@ -19,7 +19,7 @@ router.use('/trucks', trucksController);
 router.use('/contactforms', contactFormController)
 router.use('/users', usersController);
 router.use('/menu', menuController);
-router.use('/allItems', itemsController)
+router.use('/all', itemsController)
 
 
 export default router;

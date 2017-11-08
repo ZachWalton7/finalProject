@@ -157,13 +157,13 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
-    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items', function($scope, $routeParams, Menu, UserService, Items){
+    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items','$location', function($scope, $routeParams, Menu, UserService, Items, $location){
        
         getMenus = function () {
             UserService.me()
         .then((me) => {
             console.log(me);
-           $scope.menus = Menu.query({ id: me.truckId });
+           $scope.menus = Menu.query({ foodTruckId: me.truckId });
            
         })};
 
@@ -171,17 +171,10 @@ angular.module('TruckHunt.controllers', [])
         
         
 
-        // const idToGet = $routeParams.id
-        // console.log(idToGet)
-        
-        // console.log($scope.menu);
-        $scope.updateMenu = function (menuid) {
-            console.log(menuid)
-            $scope.singleItem = Items.get({ id: menuid });
-            console.log($scope.singleItem);
-
-            $scope.singleItem.$update(function () {
-                $location.path('/menu');
+        $scope.updateMenu = function (menu) {
+            console.log(menu)
+            menu.$update(function () {
+                // $location.path('/menu');
             });
         };
     }])
@@ -234,4 +227,16 @@ angular.module('TruckHunt.controllers', [])
             $location.path('/updateMenu');
         }
     }])
-    
+    .controller('updateItem',['$scope', '$routeParams', 'Items', '$location', function ($scope, $routeParams, Items, $location) {
+        const idToGet = $routeParams.idmenus;
+        console.log(idToGet)
+        $scope.item = Items.get({ idmenus: idToGet });
+
+        $scope.updateItem = function () {
+
+
+            $scope.item.$update(function () {
+                $location.path('/menu');
+            });
+        }
+    }])

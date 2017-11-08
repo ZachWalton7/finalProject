@@ -8,7 +8,9 @@
             <input class="form-control" ng-model="menu.item" id="item"></input>
             <label for="firstName">Update {{ menu.item }} Price</label>
             <input class="form-control" ng-model="menu.cost" id="item"></input>
-            <button type="button" class="btn btn-danger" ng-click="updateMenu(menu.idmenus)">Remove Item</button>
+            <a ng-href="/menu/{{ menu.idmenus }}">
+            <button type="button" class="btn btn-danger">Modify Item</button>
+             </a>
         </div>
 
         <button type="button" class="btn btn-danger" ng-click="updateMenu()">Update</button>

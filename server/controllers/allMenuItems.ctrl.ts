@@ -13,25 +13,24 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
-    procedures.single(req.params.id)
+router.get('/:idmenus', (req, res) => {
+    procedures.single(req.params.idmenus)
     .then((menu) => {
         res.send(menu);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
     });
-});
+})
 
- router.put('/:id', (req, res) => {
+   .put('/:idmenus', (req, res) => {
     procedures.update(req.params.idmenus, req.body.item, req.body.cost)
-    .then((item) =>{
-        res.send(item);
-        console.log(item);
+    .then(() => {
+        res.sendStatus(204);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
-    })
+    });
 });
 
 export default router;

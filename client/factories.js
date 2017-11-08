@@ -32,16 +32,24 @@ angular.module('TruckHunt.factories', [])
     });
 }])
 .factory('Menu', ['$resource', function($resource) {
-    return $resource('/api/menu/:id', {id: '@id'}, {
+    return $resource('/api/menu/:id/truck/:foodTruckId', {id: '@id'}, {
         update: {
-            method: 'PUT'
+            method: 'PUT',
+            url: '/api/menu/:id'
         }
+        // ,
+        // getMenuItem: {
+        //     method: 'GET',
+        //     url: '/api/menu/truck/:truckid/item/:itemid',
+        //     isArray: false
+        // }
     });
 }])
 .factory('Items', ['$resource', function($resource) {
-    return $resource('/api/allItems/:id', {id: '@id'}, {
+    return $resource('api/all/:idmenus', {idmenus: '@idmenus'}, {
         update: {
-            method: 'PUT'
+            method: 'PUT',
+            url: '/api/all/:idmenus'
         }
     });
 }])

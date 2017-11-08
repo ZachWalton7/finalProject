@@ -6,3 +6,127 @@
 	color: white;
 	text-decoration: none;
 }
+
+.popup-image {
+	width: 100%;
+	height: auto;
+	/* position: relative;
+	top: 50%;
+	transform: translateY(-50%); */
+}
+
+.popup-container {
+	width: 25em;
+}
+
+.popup-line {
+	background-color: #caebf2;
+	margin-top: 0;
+}
+
+.popup-img {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 1em;
+}
+
+.popup-text {
+	line-height: 0;
+}
+
+.map-category {
+	font-size: 15px;
+	text-transform: capitalize;
+}
+
+
+
+
+@media all and (max-width: 767px) {
+	.popup-image {
+		width: 10em;
+		height: auto;
+	}
+
+	.popup-img {
+		text-align: center;
+	}
+
+	.popup-container {
+		width: 15em;
+		text-align: center;
+	}
+
+	.popup-section {
+		text-align: center;
+	}
+
+	.watermelon-button {
+		height: 3em;
+		width: 75%;
+		line-height: 3em;
+		background-color: #FF3B3F;
+		text-align: center;
+	}
+ }
+
+ .truck-listname {
+	text-transform: uppercase;
+	color: #FF3B3F;
+	font-weight: bold;
+	letter-spacing: 1px;
+ }
+	
+.watermelon-button {
+	height: 3em;
+	width: 30%;
+	line-height: 3em;
+	background-color: #FF3B3F;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.list-category {
+	text-transform: capitalize;
+}
+
+#map-link {
+	color: #ff3b3f;
+	font-size: 14px;
+}
+
+#map-link:hover {
+	background-color: #caebf2;
+	text-decoration: none;
+}
+
+.second-row {
+	text-align: left;
+}
+
+.footer-container {
+	width: 100%;
+}
+
+#current-location {
+	display: inline-block;
+	text-transform: capitalize;
+}
+
+.fa-location-arrow {
+	padding-right: 0.5em;
+}
+
+.fa-facebook-square {
+	color: #ff3b3f;
+}
+
+.fa-instagram {
+	color: #ff3b3f;
+}
+
+.fa-twitter-square {
+	color: #ff3b3f;
+}

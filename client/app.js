@@ -51,7 +51,7 @@ angular.module('TruckHunt', [
     .when('/:theId', {
         templateUrl: 'views/truck.html',
         controller: 'TruckController'
-    })
+    }) 
     .otherwise({
         redirectTo: '/'
     });

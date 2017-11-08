@@ -226,3 +226,12 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
+    .controller('TruckOwnersController', ['$scope','$location', function($scope, $location){
+        $scope.createTruck = function() {
+            $location.path('/createTruck');
+        };
+        $scope.updteMenu = function() {
+            $location.path('/updateMenu');
+        }
+    }])
+    

@@ -1,34 +1,8 @@
 <main-navigation></main-navigation>
-<!-- <h3>Individual Truck Page</h3> -->
-
-<!-- header pic -->
-<!-- <div class="container">
-<div class = "col-md-7">
-    <img src="/images/Big-Spoon-Creamery.jpg">
-</div>
-</div> -->
-
-<!-- <div class="container">
-        <img src="/images/Big-Spoon-Creamery.jpg" alt="Avatar" class="image">
-        <div class="overlay">
-          <div class="text">{{ single.truckName }}</div>
-        </div>
-      </div> -->
-<!-- 
-<div class"container-fluid">
-    <div class="truck1-desc">
-    <p id="truck1-p"> {{ single.truckName }} </p>
-    <h6>{{ single.truckDescription }}</h6>
-    </div>
-</div> -->
-<!-- <div class="container-fluid"> -->
-
-<!-- </div> -->
-
 
 <!-- carousel images -->
-<div class="list-container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div class="list-container container-fluid">
+    <div id="carouselExampleIndicators" class="carousel slide">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -45,11 +19,11 @@
                 <img class="d-block w-100" ng-src="{{ single.imgthree }}" alt="Third slide">
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" data-target="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" data-target="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
@@ -81,6 +55,17 @@
         <h4 ng-repeat="menu in menu" id="truck1-menu">
             {{ menu.item }} {{ menu.cost | currency }} </h4>
     </div>
+</div>
+
+<!-- third color stripe with location -->
+<div class="color-stripe truck-location">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+                <i class="fa fa-location-arrow fa-2x"></i>
+                <h3 id="current-location">Current location: {{ single.location }} ({{ single.locationname }})</h3>
+        </div>
+    </div>
+
 </div>
 
 <div class="truck1-map">

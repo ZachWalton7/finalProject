@@ -44,7 +44,7 @@ angular.module('TruckHunt', [
         controller: 'CreateTruckController',
         requiresLogin: true
     })
-    .when('/user/:id/menuUpdate', {
+    .when('/menu', {
         templateUrl: 'views/menuUpdate.html',
         controller: 'MenuUpdate'
     })

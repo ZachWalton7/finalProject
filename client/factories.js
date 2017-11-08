@@ -38,6 +38,13 @@ angular.module('TruckHunt.factories', [])
         }
     });
 }])
+.factory('Items', ['$resource', function($resource) {
+    return $resource('/api/allItems/:id', {id: '@id'}, {
+        update: {
+            method: 'PUT'
+        }
+    });
+}])
 .factory('Create', ['$resource', function($resource){
     return $resource('/api/trucks/:id', { id: '@id' })
 }])

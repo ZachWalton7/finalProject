@@ -1,7 +1,7 @@
 import { row, rows, empty } from '../config/db';
 
-export function menu(foodTruckId: Number) {
-    return rows('MenuItems', [foodTruckId]);
+export function all() {
+    return rows('allMenuItems');
 }
 
 export function update(menusId: Number, item: String, cost: Number){

@@ -93,7 +93,7 @@ angular.module('TruckHunt.controllers', [])
             SEOService
         ) {
 
-        $('.carousel').carousel();
+            $('.carousel').carousel();
         
         const route = $routeParams.theId;
         $scope.single = DailySchedule.get({ id: route });
@@ -157,30 +157,31 @@ angular.module('TruckHunt.controllers', [])
             $location.replace().path('/');
         });
     }])
-    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', function($scope, $routeParams, Menu, UserService){
-        $scope.user = UserService.me()
+    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items', function($scope, $routeParams, Menu, UserService, Items){
+       
+        getMenus = function () {
+            UserService.me()
         .then((me) => {
-            // redirect();
             console.log(me);
-        });
-        
-        console.log($scope.user.id);
+           $scope.menus = Menu.query({ id: me.truckId });
+           
+        })};
 
-        const idToGet = $routeParams.id
-        console.log(idToGet)
-        function getMenu(){
-            $scope.menus = Menu.query({ id: idToGet })
-        };
-        getMenu();
-
-        console.log($scope.user);
+        getMenus();
         
-        console.log($scope.menu);
+        
+
+        // const idToGet = $routeParams.id
+        // console.log(idToGet)
+        
+        // console.log($scope.menu);
         $scope.updateMenu = function (menuid) {
-            $scope.singleItem = Menu.get({ id, menuid });
-            console.log($scope.singleItem)
+            console.log(menuid)
+            $scope.singleItem = Items.get({ id: menuid });
+            console.log($scope.singleItem);
+
             $scope.singleItem.$update(function () {
-                // $location.path('user/1/menuUpdate/13');
+                $location.path('/menu');
             });
         };
     }])

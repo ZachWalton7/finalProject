@@ -59,4 +59,19 @@ angular.module('TruckHunt.services', [])
             });
         }
     }
+
+    this.user = function() {
+        if (currentUser) {
+            return currentUser;
+        } else {
+            return $http({
+                method: 'GET',
+                url: '/api/users/me'
+            }).then((response) => {
+                currentUser = response.data;
+                return currentUser;
+            });
+        }
+    }
+
 }]);

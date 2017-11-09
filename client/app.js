@@ -44,14 +44,13 @@ angular.module('TruckHunt', [
         controller: 'CreateTruckController',
         requiresLogin: true
     })
-    .when('/truckOwners', {
-        templateUrl: 'views/truckOwners.html',
-        controller: 'TruckOwnersController',
-        requiresLogin: true
-    })
-    .when('/user/:id/menuUpdate', {
+    .when('/menu', {
         templateUrl: 'views/menuUpdate.html',
         controller: 'MenuUpdate'
+    })
+    .when('/menu/:idmenus', {
+        templateUrl: 'views/singleMenu.html',
+        controller: 'updateItem'
     })
     .when('/:theId', {
         templateUrl: 'views/truck.html',

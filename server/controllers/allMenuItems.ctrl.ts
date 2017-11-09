@@ -31,6 +31,15 @@ router.get('/:idmenus', (req, res) => {
         console.log(e);
         res.sendStatus(500);
     });
-});
+})
+// .delete((req, res) =>{
+//     procedures.destroy(req.params.idmenus)
+//     .then(() => {
+//         res.sendStatus(204);
+//     }).catch((err) => {
+//         console.log(err);
+//         res.sendStatus;
+//     });
+// });
 
 export default router;

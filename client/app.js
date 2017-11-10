@@ -48,6 +48,10 @@ angular.module('TruckHunt', [
         templateUrl: 'views/menuUpdate.html',
         controller: 'MenuUpdate'
     })
+    .when('/menu/create', {
+        templateUrl: 'views/create.html',
+        controller: 'createItem'
+    })
     .when('/truckOwners', {
         templateUrl: '/views/truckOwners.html',
         controller: 'TruckOwnersController'

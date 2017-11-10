@@ -15,3 +15,7 @@ export function update(idmenus: Number, item: String, cost: Number){
 export function single(menusId: Number){
     return row('SingleMenuItem', [menusId])
 }
+
+export function create(foodTruckId: Number, item: String, cost: Number) {
+    return row('createMenuItem', [foodTruckId, item, cost])
+}

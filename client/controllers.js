@@ -243,15 +243,15 @@ angular.module('TruckHunt.controllers', [])
             });
         }
 
-        $scope.deletePost = function() {
-            $scope.item.$delete(function() {
-                
+        $scope.deletePost = function () {
+            $scope.item.$delete(function () {
+
                 $('#delete-modal').on('hidden.bs.modal', () => {
-                    
+
                     $location.path('/');
                     $scope.$apply();
                 });
-    
+
                 $('#delete-modal').modal('hide');
             });
         }
@@ -266,11 +266,11 @@ angular.module('TruckHunt.controllers', [])
                     foodTruckId: me.truckId,
                     item: $scope.item,
                     cost: $scope.price,
-                       
+
                 })
-                i.$save(function(success) {
+                i.$save(function (success) {
                     $location.path('/');
-                }, function(err) {
+                }, function (err) {
                     console.log(err);
                 });
             });
@@ -279,33 +279,72 @@ angular.module('TruckHunt.controllers', [])
 
 
 
-            $scope.updateItem = function () {
+        $scope.updateItem = function () {
 
-                getMenus = function () {
-                    UserService.me()
-                        .then((me) => {
-                            console.log(me);
-                            $scope.menus = Menu.query({ foodTruckId: me.truckId });
+            getMenus = function () {
+                UserService.me()
+                    .then((me) => {
+                        console.log(me);
+                        $scope.menus = Menu.query({ foodTruckId: me.truckId });
 
-                        })
-                };
+                    })
+            };
 
-                getMenus();
+            getMenus();
 
-                $scope.item.$update(function () {
-                    $location.path('/menu');
+            $scope.item.$update(function () {
+                $location.path('/menu');
 
+            });
+        }
+    }])
+    .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'DailySchedule', 'Trucks ', 'UserService', function ($scope, $routeParams, $location, DailySchedule, Trucks, UserService) {
+        $scope.trucks = Trucks.query();
+        $scope.schedule = DailySchedule.get({ id: $routeParams.id });
+
+        $scope.save = function () {
+            UserService.me().then((me) => {
+                console.log(me.truckId);
+
+                let s = new DailySchedule({
+                    truckId: me.truckId,
+                    location: $scope.location,
+                    locationname: $scope.locationname,
+                    dayofweek: $scope.dayofweek,
+                    lunchdinner: $scope.lunchdinner,
+                    lat: $scope.lat,
+                    lng: $scope.lng,
+                    open: $scope.open,
+                    close: $scope.close
+
+                })
+                s.$save(function (success) {
+                    $location.path('/');
+                }, function (err) {
+                    console.log(err);
                 });
-            }
-        }])
-        .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'DailySchedule', 'Trucks ', function($scope, $routeParams, $location, DailySchedule, Trucks) {
-            $scope.trucks = Trucks.query();
-            $scope.schedule = DailySchedule.get({ id: $routeParams.id });
-    
-           $scope.save = function() {
-                $scope.schedule.$update(function() {
-                    alert('updated successfully!');
-                    $location.path('/truckOwners');
-                });
-            }
-        }])
+            });
+        };
+
+
+
+
+        $scope.updateSchedule = function () {
+
+            getSchedule = function () {
+                UserService.me()
+                    .then((me) => {
+                        console.log(me);
+                        $scope.schedule = DailySchedule.query({ truckId: me.truckId });
+
+                    })
+            };
+
+            getSchedule();
+
+            $scope.item.$update(function () {
+                $location.path('/truckOwners');
+
+            });
+        }
+    }])

@@ -48,6 +48,10 @@ angular.module('TruckHunt', [
         templateUrl: 'views/menuUpdate.html',
         controller: 'MenuUpdate'
     })
+    .when('/truckOwners', {
+        templateUrl: '/views/truckOwners.html',
+        controller: 'TruckOwnersController'
+    })
     .when('/menu/:idmenus', {
         templateUrl: 'views/singleMenu.html',
         controller: 'updateItem'

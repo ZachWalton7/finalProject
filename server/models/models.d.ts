@@ -27,6 +27,8 @@ declare namespace models {
         lunchdinner: string;
         lat: number;
         lng: number;
+        open: string;
+        close: string;
     }
     interface IDonations {
         id: number;

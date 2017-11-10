@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    procedures.update(req.params.id, req.body.location, req.body.locationname, req.body.dayofweek, req.body.lunchdinner, req.body.lat, req.body.lng)
+    procedures.update(req.params.id, req.body.location, req.body.locationname, req.body.dayofweek, req.body.lunchdinner, req.body.lat, req.body.lng, req.body.open, req.body.close)
     .then(() => {
         res.sendStatus(204);
     }).catch((e) => {

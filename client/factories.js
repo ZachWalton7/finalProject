@@ -18,7 +18,12 @@ angular.module('TruckHunt.factories', [])
      return $resource('/api/categories/:id', { id: '@id'});
  }])
  .factory('DailySchedule', ['$resource', function($resource){
-    return $resource('/api/schedule/daily/:id', { id: '@id'}, {});
+    return $resource('/api/schedule/daily/:id', { id: '@id'}, {
+        update: {
+            method: 'PUT',
+            url: 'api/schedule/daily/:id'
+        }
+    });
 }])
 .factory('Users', ['$resource', function($resource) {
     return $resource('/api/users/:id', { id: '@id'});

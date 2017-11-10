@@ -12,8 +12,8 @@ export function create(location: string, locationname: string, dayofweek: string
     return row('InsertSchedule', [location, locationname, dayofweek, lunchdinner, lat, lng]);
 }
 
-export function update(id: number, location: string, locationname: string, dayofweek: string, lunchdinner: string, lat: number, lng: number) {
-    return empty('UpdateSchedule', [id, location, locationname, dayofweek, lunchdinner, lat, lng])
+export function update(id: number, location: string, locationname: string, dayofweek: string, lunchdinner: string, lat: number, lng: number, open: string, close: string) {
+    return empty('UpdateSchedule', [id, location, locationname, dayofweek, lunchdinner, lat, lng, open, close])
 }
 
 export function daily() {

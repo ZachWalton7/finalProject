@@ -13,13 +13,13 @@ angular.module('TruckHunt.controllers', [])
             });
         }
     }])
-    .controller('MapController', ['$scope', 'NgMap', 'DailySchedule','SEOService','$location', function ($scope, NgMap, DailySchedule, SEOService, $location) {
+    .controller('MapController', ['$scope', 'NgMap', 'DailySchedule', 'SEOService', '$location', function ($scope, NgMap, DailySchedule, SEOService, $location) {
         let vm = this
 
-        NgMap.getMap().then(function(map) {
+        NgMap.getMap().then(function (map) {
             vm.map = map;
         });
-        
+
         vm.clicked = function () {
             alert('Clicked a link inside infoWindow')
         };
@@ -28,11 +28,11 @@ angular.module('TruckHunt.controllers', [])
 
         vm.shop = vm.shops[0];
 
-        vm.showDetail = function(e, shop){
+        vm.showDetail = function (e, shop) {
             vm.shop = shop;
             console.log(shop);
             vm.map.showInfoWindow('foo-iw', shop.truckId.toString());
-            
+
         };
 
         SEOService.setSEO({
@@ -77,45 +77,47 @@ angular.module('TruckHunt.controllers', [])
     .controller('TruckController', [
         '$scope',
         'Menu',
-        'Trucks', 
-        '$location', 
+        'Trucks',
+        '$location',
         '$routeParams',
         'NgMap',
-        'DailySchedule', 
-        'SEOService', function (
-            $scope, 
+        'DailySchedule',
+        'SEOService',
+        'TruckMenu', function (
+            $scope,
             Menu,
-            Trucks, 
-            $location, 
-            $routeParams, 
-            NgMap, 
+            Trucks,
+            $location,
+            $routeParams,
+            NgMap,
             DailySchedule,
-            SEOService
+            SEOService,
+            TruckMenu
         ) {
 
             $('.carousel').carousel();
-        
-        const route = $routeParams.theId;
-        $scope.single = DailySchedule.get({ id: route });
-        console.log($scope.single);
 
-        $scope.menu = Menu.query({ id: route });
-        console.log($scope.menu);
+            const route = $routeParams.theId;
+            $scope.single = DailySchedule.get({ id: route });
+            console.log($scope.single);
+
+            $scope.menu = TruckMenu.query({ foodTruckId: route });
+            console.log($scope.menu);
 
 
-        
-        NgMap.getMap().then(function (map) {
-            console.log(map.getCenter());
-            console.log('markers', map.markers);
-            console.log('shapes', map.shapes);
-        });
 
-        SEOService.setSEO({
-            title: $scope.single.truckName,
-            description: $scope.single.truckDescription,
-            url: $location.url()
-        });
-    }])
+            NgMap.getMap().then(function (map) {
+                console.log(map.getCenter());
+                console.log('markers', map.markers);
+                console.log('shapes', map.shapes);
+            });
+
+            SEOService.setSEO({
+                title: $scope.single.truckName,
+                description: $scope.single.truckDescription,
+                url: $location.url()
+            });
+        }])
     .controller('ListController', ['$scope', 'Trucks', 'SEOService', '$location', function ($scope, Trucks, SEOService, $location) {
         $scope.trucks = Trucks.query();
         console.log($scope.trucks);
@@ -127,12 +129,12 @@ angular.module('TruckHunt.controllers', [])
         });
 
     }])
-    .controller('LoginController', ['$scope', 'UserService', '$location', function($scope, UserService, $location) {
+    .controller('LoginController', ['$scope', 'UserService', '$location', function ($scope, UserService, $location) {
         UserService.me()
-        .then((me) => {
-            redirect();
-        });
-    
+            .then((me) => {
+                redirect();
+            });
+
         function redirect() {
             let dest = $location.search().dest;
             if (!dest) {
@@ -140,36 +142,37 @@ angular.module('TruckHunt.controllers', [])
             }
             $location.replace().path(dest).search('dest', null);
         }
-    
-        $scope.login = function() {
+
+        $scope.login = function () {
             UserService.login($scope.email, $scope.password)
-            .then((user) => {
-                redirect();
-            });
+                .then((user) => {
+                    redirect();
+                });
         }
-        $scope.createUser = function() {
+        $scope.createUser = function () {
             $location.path('/signup');
         }
     }])
-    .controller('LogoutController', ['$location', 'UserService', function($location, UserService) {
+    .controller('LogoutController', ['$location', 'UserService', function ($location, UserService) {
         UserService.logout()
-        .then(() => {
-            $location.replace().path('/');
-        });
+            .then(() => {
+                $location.replace().path('/');
+            });
     }])
-    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items','$location', function($scope, $routeParams, Menu, UserService, Items, $location){
-       
+    .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items', '$location', function ($scope, $routeParams, Menu, UserService, Items, $location) {
+
         getMenus = function () {
             UserService.me()
-        .then((me) => {
-            console.log(me);
-           $scope.menus = Menu.query({ foodTruckId: me.truckId });
-           
-        })};
+                .then((me) => {
+                    console.log(me);
+                    $scope.menus = Menu.query({ foodTruckId: me.truckId });
+
+                })
+        };
 
         getMenus();
-        
-        
+
+
 
         $scope.updateMenu = function (menu) {
             console.log(menu)
@@ -178,56 +181,56 @@ angular.module('TruckHunt.controllers', [])
             });
         };
     }])
-    .controller('SignupController', ['$scope', '$location', 'Users', function($scope, $location, Users){
+    .controller('SignupController', ['$scope', '$location', 'Users', function ($scope, $location, Users) {
 
-        $scope.save = function() {
+        $scope.save = function () {
             let u = new Users({
                 username: $scope.username,
                 email: $scope.email,
                 password: $scope.password
             });
-            u.$save(function(sucess) {
+            u.$save(function (sucess) {
                 $location.path('/');
-            }, function(err) {
+            }, function (err) {
                 console.log(err);
             });
         }
-    }]) 
-    .controller('CreateTruckController', ['$scope', '$location', 'Categories', 'Users', 'Create', function($scope, $location, Categories, Users, Create){
+    }])
+    .controller('CreateTruckController', ['$scope', '$location', 'Categories', 'Users', 'Create', function ($scope, $location, Categories, Users, Create) {
         $scope.categories = Categories.query();
         $scope.users = Users.query();
-        $scope.save = function() {
-        let t = new Create({
-            userid: $scope.userid,
-            categoryid: $scope.categoryid,
-            name: $scope.name,
-            description: $scope.description,
-            imgone: $scope.imgone,
-            imgtwo: $scope.imgtwo,
-            imgthree: $scope.imgthree
-        });
-        t.$save(function(sucess) {
-            $location.path('/');
-        }, function(err) {
-            console.log(err);
-        });
-    }
+        $scope.save = function () {
+            let t = new Create({
+                userid: $scope.userid,
+                categoryid: $scope.categoryid,
+                name: $scope.name,
+                description: $scope.description,
+                imgone: $scope.imgone,
+                imgtwo: $scope.imgtwo,
+                imgthree: $scope.imgthree
+            });
+            t.$save(function (sucess) {
+                $location.path('/');
+            }, function (err) {
+                console.log(err);
+            });
+        }
     }])
-    .controller('LogoutController', ['$location', 'UserService', function($location, UserService) {
+    .controller('LogoutController', ['$location', 'UserService', function ($location, UserService) {
         UserService.logout()
-        .then(() => {
-            $location.replace().path('/');
-        });
+            .then(() => {
+                $location.replace().path('/');
+            });
     }])
-    .controller('TruckOwnersController', ['$scope','$location', function($scope, $location){
-        $scope.createTruck = function() {
+    .controller('TruckOwnersController', ['$scope', '$location', function ($scope, $location) {
+        $scope.createTruck = function () {
             $location.path('/createTruck');
         };
-        $scope.updteMenu = function() {
+        $scope.updteMenu = function () {
             $location.path('/updateMenu');
         }
     }])
-    .controller('updateItem',['$scope', '$routeParams', 'Items', '$location', function ($scope, $routeParams, Items, $location) {
+    .controller('updateItem', ['$scope', '$routeParams', 'Items', '$location', function ($scope, $routeParams, Items, $location) {
         const idToGet = $routeParams.idmenus;
         console.log(idToGet)
         $scope.item = Items.get({ idmenus: idToGet });
@@ -239,4 +242,70 @@ angular.module('TruckHunt.controllers', [])
                 $location.path('/menu');
             });
         }
+
+        $scope.deletePost = function() {
+            $scope.item.$delete(function() {
+                
+                $('#delete-modal').on('hidden.bs.modal', () => {
+                    
+                    $location.path('/');
+                    $scope.$apply();
+                });
+    
+                $('#delete-modal').modal('hide');
+            });
+        }
     }])
+    .controller('createItem', ['$scope', '$routeParams', 'Items', '$location', 'UserService', function ($scope, $routeParams, Items, $location, UserService) {
+
+        $scope.save = function () {
+            UserService.me().then((me) => {
+                console.log(me.truckId);
+
+                let i = new Items({
+                    foodTruckId: me.truckId,
+                    item: $scope.item,
+                    cost: $scope.price,
+                       
+                })
+                i.$save(function(success) {
+                    $location.path('/');
+                }, function(err) {
+                    console.log(err);
+                });
+            });
+        };
+
+
+
+
+            $scope.updateItem = function () {
+
+                getMenus = function () {
+                    UserService.me()
+                        .then((me) => {
+                            console.log(me);
+                            $scope.menus = Menu.query({ foodTruckId: me.truckId });
+
+                        })
+                };
+
+                getMenus();
+
+                $scope.item.$update(function () {
+                    $location.path('/menu');
+
+                });
+            }
+        }])
+        .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'DailySchedule', 'Trucks ', function($scope, $routeParams, $location, DailySchedule, Trucks) {
+            $scope.trucks = Trucks.query();
+            $scope.schedule = DailySchedule.get({ id: $routeParams.id });
+    
+           $scope.save = function() {
+                $scope.schedule.$update(function() {
+                    alert('updated successfully!');
+                    $location.path('/truckOwners');
+                });
+            }
+        }])

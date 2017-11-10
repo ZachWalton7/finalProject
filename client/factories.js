@@ -56,3 +56,17 @@ angular.module('TruckHunt.factories', [])
 .factory('Create', ['$resource', function($resource){
     return $resource('/api/trucks/:id', { id: '@id' })
 }])
+.factory('TruckMenu', ['$resource', function($resource) {
+    return $resource('/api/menu/truck/:foodTruckId', {id: '@foodTruckId'}, {
+        update: {
+            method: 'PUT',
+            url: '/api/menu/:id'
+        }
+        // ,
+        // getMenuItem: {
+        //     method: 'GET',
+        //     url: '/api/menu/truck/:truckid/item/:itemid',
+        //     isArray: false
+        // }
+    });
+}])

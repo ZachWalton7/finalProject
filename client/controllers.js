@@ -82,7 +82,8 @@ angular.module('TruckHunt.controllers', [])
         '$routeParams',
         'NgMap',
         'DailySchedule', 
-        'SEOService', function (
+        'SEOService',
+        'TruckMenu', function (
             $scope, 
             Menu,
             Trucks, 
@@ -90,7 +91,8 @@ angular.module('TruckHunt.controllers', [])
             $routeParams, 
             NgMap, 
             DailySchedule,
-            SEOService
+            SEOService,
+            TruckMenu
         ) {
 
             $('.carousel').carousel();
@@ -99,7 +101,7 @@ angular.module('TruckHunt.controllers', [])
         $scope.single = DailySchedule.get({ id: route });
         console.log($scope.single);
 
-        $scope.menu = Menu.query({ id: route });
+        $scope.menu = TruckMenu.query({ foodTruckId: route });
         console.log($scope.menu);
 
 

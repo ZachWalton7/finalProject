@@ -1,47 +1,45 @@
 <main-navigation></main-navigation>
-<div class="create-page">
-<div class="container">
+<div class="container create-truck">
+    <h2 class="text-center"> Create your truck</h2><br>
     <div class="row">
-<figure>
-    <img itemprop="image" src="/images/truck-gif.gif" width="650" height="486">
-</figure>
-
-<div class="create-container">
-<form ng-submit="save()">
-    <div class="form-group">
-        <input type="text" class="form-control" ng-model="name" placeholder="Enter Truck Name"/>
-    </div>
-    <div class="form-group form-row">
-        <div class="col">
-            <select class="form-control" ng-model="categoryid">
-                <option value="">Select a Category</option>
-                <option value="{{ c.id }}" ng-repeat="c in categories">{{ c.name }}</option>
-            </select>
+        <div class="col-sm-6">
+            <img src="/images/truck-gif.gif" id="truck-gif" alt="">
         </div>
-        <div class="col">
-            <select class="form-control" ng-model="userid">
-                <option value="">Select a User</option>
-                <option value="{{ u.id }}" ng-repeat="u in users">{{ u.username }}</option>
-            </select>
-        </div>
+        <div class="col-sm-6">
+            <form ng-submit="save()">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="name" placeholder="Enter Truck Name"/>
+                </div>
+                <div class="form-group form-row">
+                    <div class="col">
+                        <select class="form-control" ng-model="categoryid">
+                            <option value="">Select a Category</option>
+                            <option value="{{ c.id }}" ng-repeat="c in categories">{{ c.name }}</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-control" ng-model="userid">
+                            <option value="">Select a User</option>
+                            <option value="{{ u.id }}" ng-repeat="u in users">{{ u.username }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="description" placeholder="Enter Your Truck's Description Here"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="imgone" placeholder="Paste Your First Image URL Here"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="imgtwo" placeholder="Paste Your Second Image URL Here"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="imgthree" placeholder="Paste Your Third Image URL Here"/>
+                </div>
+            </br>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button class="btn" id="createtruck-btn">&nbsp Create Truck &nbsp </button> 
+            </form>
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control" ng-model="description" placeholder="Enter Your Truck's Description Here"/>
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" ng-model="imgone" placeholder="Paste Your First Image URL Here"/>
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" ng-model="imgtwo" placeholder="Paste Your Second Image URL Here"/>
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" ng-model="imgthree" placeholder="Paste Your Third Image URL Here"/>
-    </div>
-</br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button class="btn" id="createtruck-btn">&nbsp Create Truck &nbsp </button> 
-</form>
-</div>
-</div>
 </div>
 </div>
 

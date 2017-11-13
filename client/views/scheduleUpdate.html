@@ -1,28 +1,34 @@
-<h1>Update your Schedule!</h1>
+<main-navigation></main-navigation>
 
-<div ng-controller="SingleScheduleUpdate as vm" class="form-group">
+<div class="container menu-form">
+    <h1 class="text-center">Update your Schedule!</h1>
 
-    <label for="firstName">Location Name</label>
-    <input class="form-control" ng-model="single.location" id="item"></input>
+    <div ng-controller="SingleScheduleUpdate as vm" class="form-group">
 
-    <label for="firstName">Location Address</label>
-    <input places-auto-complete class="form-control" ng-model="single.locationname" id="item" on-place-changed="vm.placeChanged()"></input>
+        <label for="firstName">Location Name</label>
+        <input class="form-control" ng-model="single.location" id="item"></input>
 
-    <label for="firstName">Open Time</label>
-    <input class="form-control" ng-model="single.open" id="item"></input>
+        <label for="firstName">Location Address</label>
+        <input places-auto-complete class="form-control" ng-model="single.locationname" id="item" on-place-changed="vm.placeChanged()"></input>
 
-    <label for="firstName">Closing Time</label>
-    <input class="form-control" ng-model="single.close" id="item"></input>
+        <label for="firstName">Open Time</label>
+        <input class="form-control" ng-model="single.open" id="item"></input>
 
-    <div class="latLng">
+        <label for="firstName">Closing Time</label>
+        <input class="form-control" ng-model="single.close" id="item"></input>
 
-        <label>Lat</label>
-        <input class="form-control" ng-model="single.lat" id="lat"></input>
+        <div class="latLng">
 
-        <label for="firstName">Lng</label>
-        <input class="form-control" ng-model="single.lng" id="lng"></input>
-        
+            <label>Lat</label>
+            <input class="form-control" ng-model="single.lat" id="lat"></input>
+
+            <label for="firstName">Lng</label>
+            <input class="form-control" ng-model="single.lng" id="lng"></input>
+            
+        </div>
+        <div id="menu-buttons" class="text-center">
+            <button type="button" class="menu-button" ng-click="updateSchedule()">Update</button>
+            <a href="/schedule" class="back-links">Go Back</a>
+        </div>
     </div>
-
-    <button type="button" class="btn btn-danger" ng-click="updateSchedule()">Update</button>
 </div>

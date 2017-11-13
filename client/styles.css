@@ -650,6 +650,7 @@ fieldset {
 #foodtruckers {
 	background-color: #CAEBF2;
 	background-image: url(/images/foodtruck.png);
+	background-size: cover;
 	/* color: white; */
 	color: #777;
 	/* padding: 35px; */
@@ -668,7 +669,7 @@ fieldset {
 	font-family:"Open Sans", Helvetica, Arial, sans-serif;
 	line-height: 1.3;
 	text-transform: uppercase;
-	font-size: 40px;
+	font-size: 45px;
 	font-weight: bold;
 }
 

@@ -17,5 +17,5 @@ export function create(foodTruckId: Number, item: String, cost: Number) {
 }
 
 export function destroy(id: number) {
-    return empty('DeletePost', [id]);
+    return empty('DeleteMenuItem', [id]);
 }

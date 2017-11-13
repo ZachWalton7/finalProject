@@ -11,9 +11,20 @@ angular.module('TruckHunt.factories', [])
  .factory('Trucks', ['$resource', function($resource){
      return $resource('/api/trucks/:id', { id: '@id'});
  }])
- .factory('Schedule', ['$resource', function($resource){
-     return $resource('/api/schedule/:id', { id: '@id'});
+ .factory('Schedules', ['$resource', function($resource){
+     return $resource('/api/schedule/:id', { id: '@id'}, {
+        update: {
+            method: 'PUT'
+        }
+    });
  }])
+ .factory('singleSchedule', ['$resource', function($resource){
+    return $resource('/api/schedule/single/:id', { id: '@id'}, {
+       update: {
+           method: 'PUT'
+       }
+   });
+}])
  .factory('TrucksByCatID', ['$resource', function($resource){
      return $resource('/api/categories/:id', { id: '@id'});
  }])

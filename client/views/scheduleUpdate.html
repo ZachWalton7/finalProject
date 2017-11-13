@@ -1,2 +1,29 @@
-<main-navigation></main-navigation>
+<h1>Update your Schedule!</h1>
 
+<div ng-controller="SingleScheduleUpdate as vm" class="form-group">
+
+    <label for="firstName">Location Name</label>
+    <input class="form-control" ng-model="single.location" id="item"></input>
+
+    <label for="firstName">Location Address</label>
+    <input places-auto-complete class="form-control" ng-model="single.locationname" id="item" on-place-changed="vm.placeChanged()"></input>
+
+    <label for="firstName">Open Time</label>
+    <input class="form-control" ng-model="single.open" id="item"></input>
+
+    <label for="firstName">Closing Time</label>
+    <input class="form-control" ng-model="single.close" id="item"></input>
+
+    <div class="latLng">
+
+        <label>Lat</label>
+        <input class="form-control" ng-model="single.lat" id="lat"></input>
+
+        <label for="firstName">Lng</label>
+        <input class="form-control" ng-model="single.lng" id="lng"></input>
+        
+    </div>
+
+    <button type="button" class="btn btn-danger" ng-click="updateItem()">Update</button>
+    <button type="button" class="btn btn-danger" ng-click="deleteItem()">Delete</button>
+</div>

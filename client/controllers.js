@@ -298,9 +298,7 @@ angular.module('TruckHunt.controllers', [])
             });
         }
     }])
-    .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'DailySchedule', 'Trucks ', 'UserService', function ($scope, $routeParams, $location, DailySchedule, Trucks, UserService) {
-        $scope.trucks = Trucks.query();
-        $scope.schedule = DailySchedule.get({ id: $routeParams.id });
+    .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'Schedules', 'Trucks', 'UserService','singleSchedule', function ($scope, $routeParams, $location, Schedules, Trucks, UserService, singleSchedule) {
 
         $scope.save = function () {
             UserService.me().then((me) => {
@@ -326,25 +324,92 @@ angular.module('TruckHunt.controllers', [])
             });
         };
 
+        getSchedule = function () {
+            UserService.me()
+                .then((me) => {
+                    console.log(me.truckId);
+                    $scope.schedules = Schedules.query({ id: me.truckId });
+                    console.log($scope.schedules)
+                })
+        };
 
+        getSchedule();
 
 
         $scope.updateSchedule = function () {
 
-            getSchedule = function () {
-                UserService.me()
-                    .then((me) => {
-                        console.log(me);
-                        $scope.schedule = DailySchedule.query({ truckId: me.truckId });
-
-                    })
-            };
-
-            getSchedule();
-
             $scope.item.$update(function () {
-                $location.path('/truckOwners');
+                $location.path('/schedule');
 
             });
         }
+    }])
+    .controller('SingleScheduleUpdate', ['$scope', '$routeParams', '$location', 'Schedules', 'Trucks', 'UserService','singleSchedule','NgMap', function ($scope, $routeParams, $location, Schedules, Trucks, UserService, singleSchedule, NgMap) {
+        $scope.trucks = Trucks.query();
+        
+
+        $scope.single = singleSchedule.get({ id: $routeParams.id })
+        console.log($scope.single)
+
+        $scope.save = function () {
+            UserService.me().then((me) => {
+                console.log(me.truckId);
+
+                let s = new DailySchedule({
+                    truckId: me.truckId,
+                    location: $scope.location,
+                    locationname: $scope.locationname,
+                    dayofweek: $scope.dayofweek,
+                    lunchdinner: $scope.lunchdinner,
+                    lat: $scope.lat,
+                    lng: $scope.lng,
+                    open: $scope.open,
+                    close: $scope.close
+
+                })
+                s.$save(function (success) {
+                    $location.path('/');
+                }, function (err) {
+                    console.log(err);
+                });
+            });
+        };
+
+        getSchedule = function () {
+            UserService.me()
+                .then((me) => {
+                    console.log(me.truckId);
+                    $scope.schedules = Schedules.query({ id: me.truckId });
+                    console.log($scope.schedules)
+                })
+        };
+
+        getSchedule();
+
+
+        $scope.updateSchedule = function () {
+
+            $scope.item.$update(function () {
+                $location.path('/schedule');
+
+            });
+        }
+
+        var vm = this;
+        vm.types = "['establishment']";
+        vm.placeChanged = function() {
+          vm.place = this.getPlace();
+          console.log('location', vm.place.geometry.location);
+          console.log(vm.place.geometry.location.lat());
+          console.log(vm.place.geometry.location.lng());
+          console.log($scope.location)
+          vm.place.geometry.location.latLng;
+          document.getElementById("lat").value = vm.place.geometry.location.lat();
+          document.getElementById("lng").value = vm.place.geometry.location.lng();
+        }
+        
+        NgMap.getMap().then(function(map) {
+          vm.map = map;
+        });
+
     }])

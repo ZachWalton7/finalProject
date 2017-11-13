@@ -210,7 +210,7 @@ angular.module('TruckHunt.controllers', [])
                 imgthree: $scope.imgthree
             });
             t.$save(function (sucess) {
-                $location.path('/');
+                $location.path('/truckOwners');
             }, function (err) {
                 console.log(err);
             });

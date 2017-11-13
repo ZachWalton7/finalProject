@@ -1,0 +1,13 @@
+<main-navigation></main-navigation>
+
+<h1>Schedule List</h1>
+
+<div ng-repeat="schedule in schedules" class="card schedule-card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ schedule.dayofweek }}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">{{ schedule.lunchdinner }}</h6>
+          <p class="card-text">{{ schedule.location }}</p>
+          <p class="card-text">{{ schedule.locationname }}</p>
+          <a href="/schedule/{{ schedule.scheduleid }}" class="card-link">Update Info</a>
+        </div>
+      </div>

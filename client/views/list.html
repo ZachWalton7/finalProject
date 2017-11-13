@@ -10,7 +10,8 @@
             <h6 class="list-category"><strong>Category:</strong> {{ truck.categoryName }}</h6>
             <br>
             <h6><strong>Description:</strong> {{ truck.description }}</h6>
-            <h6 class="list-category"><strong>Current Location:</strong></h6>
+            <h6 class="list-category"><strong>Current Location: </strong>{{ truck.location }}</strong></h6>
+            <h6 class="list-category"><strong>Address: </strong>{{ truck.locationname }}</h6>
             <br>
             <a ng-href="/{{truck.id}}" class="list-btn">
                 <div class="watermelon-button">More Info</div>

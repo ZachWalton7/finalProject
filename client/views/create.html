@@ -1,0 +1,16 @@
+<main-navigation></main-navigation>
+
+<div class="container menu-form">
+    <h2 class="text-center">Add New Menu Item</h2>
+    <form ng-submit="save()">
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="item" placeholder="Item Name" />            
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="price" placeholder="Item Price"/>
+        </div>
+        <button class="menu-button">Save</button>
+        <a href="/menu" class="back-links">Go Back</a>
+    </form>
+</div>

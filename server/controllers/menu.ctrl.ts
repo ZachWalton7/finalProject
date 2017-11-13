@@ -12,6 +12,15 @@ router.get('/', (req, res) => {
         console.log(e);
         res.sendStatus(500);
     });
+})
+.post('/', (req, res) => {
+    procedures.create(req.body.foodTruckId, req.body.item, req.body.cost)
+    .then((response) => {
+        res.send(response);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
 });
 
 // get all menu items for a specific truck

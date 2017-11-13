@@ -11,6 +11,15 @@ router.get('/', (req, res) => {
         console.log(e);
         res.sendStatus(500);
     });
+})
+.post('/', (req, res) => {
+    procedures.create(req.body.foodTruckId, req.body.item, req.body.cost)
+    .then((response) => {
+        res.send(response);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
 });
 
 router.get('/:idmenus', (req, res) => {
@@ -32,14 +41,14 @@ router.get('/:idmenus', (req, res) => {
         res.sendStatus(500);
     });
 })
-// .delete((req, res) =>{
-//     procedures.destroy(req.params.idmenus)
-//     .then(() => {
-//         res.sendStatus(204);
-//     }).catch((err) => {
-//         console.log(err);
-//         res.sendStatus;
-//     });
-// });
+.delete('/:idmenus',(req, res) => {
+    procedures.destroy(req.params.idmenus)
+    .then(() => {
+        res.sendStatus(204);
+    }).catch((err) => {
+        console.log(err);
+        res.sendStatus;
+    });
+});
 
 export default router;

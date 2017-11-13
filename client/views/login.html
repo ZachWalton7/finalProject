@@ -1,24 +1,25 @@
+
 <main-navigation></main-navigation>
-<div id="foodtruckers">
-<h2 id="foodtruckers2">Welcome back, Foodtruckers! </h2></br> 
-<h3 id="foodtruckers3">Login now to update your menu, schedule and photos!</h3>
+<div class="contain">
+    <div id="foodtruckers">
+        <h2 id="foodtruckers2">Welcome back, Foodtruckers! </h2></br> </br>
+        <h3 id="foodtruckers3">Login now to update your menu, schedule and photos!</h3>
+    </div>
+</br>
+    <div class="login-container">
+        <form ng-submit="login()" class="login-form">
+            <input type="email" class="form-control" placeholder="Email Address" ng-model="email" />
+            <input type="password" class="form-control" placeholder="Password" ng-model="password" />
+            <button class="btn">Login</button>
+        </form>
+        <hr class="divider">
+        <div>
+            <h4 class="small-text">New to Truck Hunt?</h4>
+            <button ng-click="createUser()" class="btn">Create an Account</button>
+        </div>
+    </div>
 </div>
 
-<div class="login-container">
-<div class="container">
-    <div class="row">
-<form ng-submit="login()">
-    <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email Address" ng-model="email" />
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" ng-model="password" />
-    </div>
-    <button class="btn">Login</button>
-</form>
-<div>
-    <button ng-click="createUser()" class="btn">Create an Account</button>
-</div>
-</div>
-</div>
-</div>
+
+</br> </br> 
+<footer-nav></footer-nav>

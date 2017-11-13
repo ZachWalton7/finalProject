@@ -243,15 +243,15 @@ angular.module('TruckHunt.controllers', [])
             });
         }
 
-        $scope.deletePost = function() {
-            $scope.item.$delete(function() {
-                
+        $scope.deleteItem = function () {
+            console.log('clicked')
+            $scope.item.$delete(function () {
+
                 $('#delete-modal').on('hidden.bs.modal', () => {
-                    
-                    $location.path('/');
+                    $location.path('/menu');
                     $scope.$apply();
                 });
-    
+
                 $('#delete-modal').modal('hide');
             });
         }
@@ -266,11 +266,11 @@ angular.module('TruckHunt.controllers', [])
                     foodTruckId: me.truckId,
                     item: $scope.item,
                     cost: $scope.price,
-                       
+
                 })
-                i.$save(function(success) {
+                i.$save(function (success) {
                     $location.path('/');
-                }, function(err) {
+                }, function (err) {
                     console.log(err);
                 });
             });
@@ -279,33 +279,117 @@ angular.module('TruckHunt.controllers', [])
 
 
 
-            $scope.updateItem = function () {
+        $scope.updateItem = function () {
 
-                getMenus = function () {
-                    UserService.me()
-                        .then((me) => {
-                            console.log(me);
-                            $scope.menus = Menu.query({ foodTruckId: me.truckId });
+            getMenus = function () {
+                UserService.me()
+                    .then((me) => {
+                        console.log(me);
+                        $scope.menus = Menu.query({ foodTruckId: me.truckId });
 
-                        })
-                };
+                    })
+            };
 
-                getMenus();
+            getMenus();
 
-                $scope.item.$update(function () {
-                    $location.path('/menu');
+            $scope.item.$update(function () {
+                $location.path('/menu');
 
+            });
+        }
+    }])
+    .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'Schedules', 'Trucks', 'UserService','singleSchedule', function ($scope, $routeParams, $location, Schedules, Trucks, UserService, singleSchedule) {
+
+        $scope.save = function () {
+            UserService.me().then((me) => {
+                console.log(me.truckId);
+
+                let s = new DailySchedule({
+                    truckId: me.truckId,
+                    location: $scope.location,
+                    locationname: $scope.locationname,
+                    dayofweek: $scope.dayofweek,
+                    lunchdinner: $scope.lunchdinner,
+                    lat: $scope.lat,
+                    lng: $scope.lng,
+                    open: $scope.open,
+                    close: $scope.close
+
+                })
+                s.$save(function (success) {
+                    $location.path('/');
+                }, function (err) {
+                    console.log(err);
                 });
-            }
-        }])
-        .controller('ScheduleUpdate', ['$scope', '$routeParams', '$location', 'DailySchedule', 'Trucks ', function($scope, $routeParams, $location, DailySchedule, Trucks) {
-            $scope.trucks = Trucks.query();
-            $scope.schedule = DailySchedule.get({ id: $routeParams.id });
-    
-           $scope.save = function() {
-                $scope.schedule.$update(function() {
-                    alert('updated successfully!');
-                    $location.path('/truckOwners');
+            });
+        };
+
+        getSchedule = function () {
+            UserService.me()
+                .then((me) => {
+                    console.log(me.truckId);
+                    $scope.schedules = Schedules.query({ id: me.truckId });
+                    console.log($scope.schedules)
+                })
+        };
+
+        getSchedule();
+    }])
+    .controller('SingleScheduleUpdate', ['$scope', '$routeParams', '$location', 'Schedules', 'Trucks', 'UserService','singleSchedule','NgMap', function ($scope, $routeParams, $location, Schedules, Trucks, UserService, singleSchedule, NgMap) {
+        $scope.trucks = Trucks.query();
+        
+
+        $scope.single = singleSchedule.get({ id: $routeParams.id })
+        console.log($scope.single)
+
+        $scope.save = function () {
+            UserService.me().then((me) => {
+                console.log(me.truckId);
+
+                let s = new DailySchedule({
+                    truckId: me.truckId,
+                    location: $scope.location,
+                    locationname: $scope.locationname,
+                    dayofweek: $scope.dayofweek,
+                    lunchdinner: $scope.lunchdinner,
+                    lat: $scope.lat,
+                    lng: $scope.lng,
+                    open: $scope.open,
+                    close: $scope.close
+
+                })
+                s.$save(function (success) {
+                    $location.path('/');
+                }, function (err) {
+                    console.log(err);
                 });
-            }
-        }])
+            });
+        };
+
+
+         $scope.updateSchedule = function () {
+            console.log("clicked")
+            console.log($scope.single)
+            $scope.single.$update(function () {
+                // $location.path('/schedule');
+            });
+        }
+
+        var vm = this;
+        vm.types = "['establishment']";
+        vm.placeChanged = function() {
+          vm.place = this.getPlace();
+          vm.place.geometry.location.latLng;
+          document.getElementById("lat").ngmodel = vm.place.geometry.location.lat();
+          document.getElementById("lng").ngmodel = vm.place.geometry.location.lng();
+        //   document.getElementById("lat").value = vm.place.geometry.location.lat();
+        //   document.getElementById("lng").value = vm.place.geometry.location.lng();
+          $scope.single.lat = vm.place.geometry.location.lat();
+          $scope.single.lng = vm.place.geometry.location.lng();
+        }
+        
+        NgMap.getMap().then(function(map) {
+          vm.map = map;
+        });
+
+    }])

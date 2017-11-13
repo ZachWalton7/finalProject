@@ -1,19 +1,20 @@
 <main-navigation></main-navigation>
-
-<div id="user-list">
-    <h3>Update Menu</h3>
-    <form>
-        <div ng-repeat="menu in menus" class="form-group">
-            <label for="firstName">Menu Item Name</label>
-            <input class="form-control" ng-model="menu.item" id="item"></input>
-            <label for="firstName">Update {{ menu.item }} Price</label>
-            <input class="form-control" ng-model="menu.cost" id="item"></input>
-            <a ng-href="/menu/{{ menu.idmenus }}">
-            <button type="button" class="btn btn-danger">Modify Item</button>
-             </a>
-        </div>
-        <a ng-href="/menu/create">
-            <button type="button" class="btn btn-danger">Create New Item</button>
-             </a>
-    </form>
+<div class="container" id="menu-container">
+    <div class="menu-title">
+        <h2>Update Menu</h2>
+    </div>
+    <div ng-repeat="menu in menus" class="menu-items">
+        {{ menu.item }} {{ menu.cost | currency}}
+        <a ng-href="/menu/{{ menu.idmenus }}">
+            <i class="fa fa-pencil" id="pencil"></i>
+        </a>
+    </div>
+    <div class="create-item text-center">
+        <a href="/menu/create" class="list-btn">
+            <div class="watermelon-button" id="menu-button">
+                <i class="fa fa-plus"></i> Add new Item
+            </div>
+        </a>
+        <a href="/truckOwners" class="back-links">Go Back</a>
+    </div>
 </div>

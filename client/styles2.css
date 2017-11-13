@@ -189,7 +189,7 @@
 	border-style: solid;
 	border-color: #efefef;
 	display: inline-block;
-	border-width: 2px 2px 2px 0;
+	border-width: 1px 1px 1px 0;
 	letter-spacing: 2px;
 	background-color: #FF3B3F;
 }
@@ -197,8 +197,123 @@
 .btn-map {
 	border-style: solid;
 	border-color: #efefef;
-	border-width: 2px;
+	border-width: 1px;
 	display: inline-block;
 	letter-spacing: 2px;
 	background-color: #FF3B3F;
 }
+
+.owner-text {
+	text-align: center;
+	margin-top: 3em;
+	margin-bottom: 5em;
+}
+
+.owner-buttons {
+	text-align: center;
+	margin: 3em auto;
+	width: 60%;
+	height: 20em;
+
+}
+
+/* #create-truck {
+	background-color: #caebf2;
+	margin: 2em;
+
+}
+
+#update-truck {
+	background-color: #caebf2;
+	margin: 2em;
+
+} */
+
+.owner-description {
+	font-size: 1.5em;
+
+}
+
+.button-owner {
+		background-color: #FF3B3F;
+		width: 50%;
+		margin: 0 auto;
+		text-transform: uppercase;
+		font-weight: bold;
+}
+
+
+.owner-buttons a {
+	color: #ff3b3f;
+	text-align: center;
+}
+
+.owner-buttons a:hover {
+	text-decoration: none;
+	color: #caebf2;
+}
+
+#menu-container {
+	text-align: center;
+}
+
+.menu-items {
+	font-size: 1.5em;
+}
+
+#pencil {
+	color: #ff3b3f;
+}
+
+#pencil:hover {
+	color: #caebf2;
+}
+
+.menu-title {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+.menu-button {
+	background-color: #ff3b3f;
+	color: white;
+	border: none;
+	text-transform: uppercase;
+	height: 3em;
+	margin: 0 1em 0 1em;
+	width: 25%;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.menu-form {
+	width: 50%;
+	margin-top: 3em;
+}
+
+#menu-buttons {
+	padding-top: 2em;
+}
+
+#menu-button {
+	margin: 0 auto;
+}
+
+.create-item {
+	margin-top: 2em;
+}
+
+.back-links {
+	color: #ff3b3f;
+}
+
+.back-links:hover {
+	color: #caebf2;
+	text-decoration: none;
+}
+
+#navbar-links a:hover{
+	color: #efefef;
+}
+
+

@@ -11,14 +11,31 @@ angular.module('TruckHunt.factories', [])
  .factory('Trucks', ['$resource', function($resource){
      return $resource('/api/trucks/:id', { id: '@id'});
  }])
- .factory('Schedule', ['$resource', function($resource){
-     return $resource('/api/schedule/:id', { id: '@id'});
+ .factory('Schedules', ['$resource', function($resource){
+     return $resource('/api/schedule/:id', { id: '@id'}, {
+        update: {
+            method: 'PUT'
+        }
+    });
  }])
+ .factory('singleSchedule', ['$resource', function($resource){
+    return $resource('/api/schedule/single/:id', { id: '@id'}, {
+       update: {
+           method: 'PUT',
+           url: '/api/schedule/single/:id'
+       }
+   });
+}])
  .factory('TrucksByCatID', ['$resource', function($resource){
      return $resource('/api/categories/:id', { id: '@id'});
  }])
  .factory('DailySchedule', ['$resource', function($resource){
-    return $resource('/api/schedule/daily/:id', { id: '@id'}, {});
+    return $resource('/api/schedule/daily/:id', { id: '@id'}, {
+        update: {
+            method: 'PUT',
+            url: 'api/schedule/daily/:id'
+        }
+    });
 }])
 .factory('Users', ['$resource', function($resource) {
     return $resource('/api/users/:id', { id: '@id'});

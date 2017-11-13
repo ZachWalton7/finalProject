@@ -1,10 +1,31 @@
 <main-navigation></main-navigation>
-<div id="test-div">
-<button ng-click="createTruck()">Create Truck</button>
+<div class="container">
+    <div class="owner-text">
+        <h1>Manage or create your food truck</h1>
+    </div>
+    <div class="owner-buttons">
+        <div class="row">
+            <div class="col-sm-4" id="create-truck">
+                <a href="/createTruck">
+                    <h2>Create New Truck</h2>
+                    <i class="fa fa-plus fa-4x"></i>
+                    <!-- <p class="owner-description">Set up a new truck</p> -->
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="/menu">
+                    <h2>Update Menu</h2>
+                    <i class="fa fa-pencil fa-4x"></i>
+                    <!-- <p class="owner-description">Make updates to an existing truck</p> -->
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="/schedule">
+                    <h2>Update Schedule</h2>
+                    <i class="fa fa-calendar fa-4x"></i>
+                    <!-- <p class="owner-description">Make updates to an existing truck</p> -->
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="test-div">
-    <a href="/menu">
-<button ng-click='updateMenu()'>Update Menu</button>
-</a>
-</div>
-

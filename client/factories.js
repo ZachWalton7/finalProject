@@ -21,7 +21,8 @@ angular.module('TruckHunt.factories', [])
  .factory('singleSchedule', ['$resource', function($resource){
     return $resource('/api/schedule/single/:id', { id: '@id'}, {
        update: {
-           method: 'PUT'
+           method: 'PUT',
+           url: '/api/schedule/single/:id'
        }
    });
 }])

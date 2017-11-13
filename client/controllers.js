@@ -243,12 +243,12 @@ angular.module('TruckHunt.controllers', [])
             });
         }
 
-        $scope.deletePost = function () {
+        $scope.deleteItem = function () {
+            console.log('clicked')
             $scope.item.$delete(function () {
 
                 $('#delete-modal').on('hidden.bs.modal', () => {
-
-                    $location.path('/');
+                    $location.path('/menu');
                     $scope.$apply();
                 });
 
@@ -334,15 +334,6 @@ angular.module('TruckHunt.controllers', [])
         };
 
         getSchedule();
-
-
-        $scope.updateSchedule = function () {
-
-            $scope.item.$update(function () {
-                $location.path('/schedule');
-
-            });
-        }
     }])
     .controller('SingleScheduleUpdate', ['$scope', '$routeParams', '$location', 'Schedules', 'Trucks', 'UserService','singleSchedule','NgMap', function ($scope, $routeParams, $location, Schedules, Trucks, UserService, singleSchedule, NgMap) {
         $scope.trucks = Trucks.query();
@@ -375,23 +366,12 @@ angular.module('TruckHunt.controllers', [])
             });
         };
 
-        getSchedule = function () {
-            UserService.me()
-                .then((me) => {
-                    console.log(me.truckId);
-                    $scope.schedules = Schedules.query({ id: me.truckId });
-                    console.log($scope.schedules)
-                })
-        };
 
-        getSchedule();
-
-
-        $scope.updateSchedule = function () {
-
-            $scope.item.$update(function () {
-                $location.path('/schedule');
-
+         $scope.updateSchedule = function () {
+            console.log("clicked")
+            console.log($scope.single)
+            $scope.single.$update(function () {
+                // $location.path('/schedule');
             });
         }
 
@@ -399,13 +379,13 @@ angular.module('TruckHunt.controllers', [])
         vm.types = "['establishment']";
         vm.placeChanged = function() {
           vm.place = this.getPlace();
-          console.log('location', vm.place.geometry.location);
-          console.log(vm.place.geometry.location.lat());
-          console.log(vm.place.geometry.location.lng());
-          console.log($scope.location)
           vm.place.geometry.location.latLng;
-          document.getElementById("lat").value = vm.place.geometry.location.lat();
-          document.getElementById("lng").value = vm.place.geometry.location.lng();
+          document.getElementById("lat").ngmodel = vm.place.geometry.location.lat();
+          document.getElementById("lng").ngmodel = vm.place.geometry.location.lng();
+        //   document.getElementById("lat").value = vm.place.geometry.location.lat();
+        //   document.getElementById("lng").value = vm.place.geometry.location.lng();
+          $scope.single.lat = vm.place.geometry.location.lat();
+          $scope.single.lng = vm.place.geometry.location.lng();
         }
         
         NgMap.getMap().then(function(map) {

@@ -57,15 +57,15 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
-    procedures.update(req.params.id, req.body.location, req.body.locationname, req.body.dayofweek, req.body.lunchdinner, req.body.lat, req.body.lng, req.body.open, req.body.close)
-    .then(() => {
-        res.sendStatus(204);
-    }).catch((e) => {
-        console.log(e);
-        res.sendStatus(500);
-    });
-});
+// router.put('/:id', (req, res) => {
+//     procedures.update(req.params.id, req.body.location, req.body.locationname, req.body.dayofweek, req.body.lunchdinner, req.body.lat, req.body.lng, req.body.open, req.body.close)
+//     .then(() => {
+//         res.sendStatus(204);
+//     }).catch((e) => {
+//         console.log(e);
+//         res.sendStatus(500);
+//     });
+// });
 
 // Gets single truck Schedule
 
@@ -80,7 +80,8 @@ router.get('/single/:id', (req, res) => {
 });
 
 router.put('/single/:id', (req, res) => {
-    procedures.update(req.params.id, req.body.location, req.body.locationname, req.body.dayofweek, req.body.lunchdinner, req.body.lat, req.body.lng, req.body.open, req.body.close)
+    console.log(req.body.lat)
+    procedures.update(req.params.id, req.body.location, req.body.locationname, req.body.open, req.body.close, req.body.lat, req.body.lng)
     .then(() => {
         res.sendStatus(204);
     }).catch((e) => {

@@ -246,9 +246,8 @@ angular.module('TruckHunt.controllers', [])
         $scope.deleteItem = function () {
             console.log('clicked')
             $scope.item.$delete(function () {
-
+                $location.path('/menu');
                 $('#delete-modal').on('hidden.bs.modal', () => {
-                    $location.path('/menu');
                     $scope.$apply();
                 });
 
@@ -269,7 +268,7 @@ angular.module('TruckHunt.controllers', [])
 
                 })
                 i.$save(function (success) {
-                    $location.path('/');
+                    $location.path('/menu');
                 }, function (err) {
                     console.log(err);
                 });

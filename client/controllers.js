@@ -371,7 +371,7 @@ angular.module('TruckHunt.controllers', [])
             console.log("clicked")
             console.log($scope.single)
             $scope.single.$update(function () {
-                // $location.path('/schedule');
+                $location.path('/schedule');
             });
         }
 

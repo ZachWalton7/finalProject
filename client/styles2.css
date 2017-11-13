@@ -316,4 +316,23 @@
 	color: #efefef;
 }
 
+#ind-social {
+	color: white;
+	height: 10em;
+	width: 100%;
+
+}
+
+.schedule-card {
+	display: inline-block;
+}
+
+#truck-gif {
+	width: 100%;
+}
+
+.create-truck {
+	margin-top: 5em;
+	margin-bottom: 5em;
+}
 

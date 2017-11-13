@@ -1,11 +1,17 @@
 <main-navigation></main-navigation>
-
-<form>
-    <div class="form-group">
-        <label for="firstName">Menu Item Name</label>
-        <input class="form-control" ng-model="item.item" id="item"></input>
-        <label for="firstName">Update {{ menu.item }} Price</label>
-        <input class="form-control" ng-model="item.cost" id="item"></input>
-        <button type="button" class="btn btn-danger" ng-click="updateItem()">Update</button>
-        <button type="button" class="btn btn-danger" ng-click="deleteItem()">Delete</button>
-    </div>
+<div class="container menu-form">
+    <form>
+        <div class="form-group">
+            <label for="firstName">Menu Item Name</label>
+            <input class="form-control" ng-model="item.item" id="item"></input>
+            <label for="firstName">Update {{ menu.item }} Price</label>
+            <input class="form-control" ng-model="item.cost" id="item"></input>
+            <div id="menu-buttons" class="text-center">
+                <button type="button" class="menu-button" ng-click="updateItem()">Update</button>
+                <button type="button" class="menu-button" ng-click="deleteItem()">Delete</button>
+                <a href="/menu" class="back-links">Go Back</a>
+            </div>
+            
+        </div>
+    </form>
+</div>

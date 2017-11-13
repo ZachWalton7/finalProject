@@ -138,7 +138,7 @@ angular.module('TruckHunt.controllers', [])
         function redirect() {
             let dest = $location.search().dest;
             if (!dest) {
-                dest = '/';
+                dest = '/truckOwners';
             }
             $location.replace().path(dest).search('dest', null);
         }

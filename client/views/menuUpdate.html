@@ -1,7 +1,11 @@
 <main-navigation></main-navigation>
+
+<div class="container-fluid menu-hero">
+    
+</div>
 <div class="container" id="menu-container">
     <div class="menu-title">
-        <h2>Update Menu</h2>
+        <h1>Update Menu</h1>
     </div>
     <div ng-repeat="menu in menus" class="menu-items">
         {{ menu.item }} {{ menu.cost | currency}}
@@ -18,3 +22,5 @@
         <a href="/truckOwners" class="back-links">Go Back</a>
     </div>
 </div>
+
+<footer-nav></footer-nav>

@@ -1,8 +1,34 @@
 <main-navigation></main-navigation>
 
-<h1>Schedule List</h1>
+<div class="container-fluid schedule-hero">
+    
+</div>
 
-<div ng-repeat="schedule in schedules" class="card schedule-card" style="width: 20rem;">
+<div class="container-fluid text-center schedule-container">
+  <h1 id="schedule-title">Current Schedule</h1>
+
+  <table id="schedule-table">
+    <tr>
+      <th>Day of Week</th>
+      <th>Lunch/Dinner</th> 
+      <th>Location Name</th>
+      <th>Location Address</th>
+      <th>Edit</th>
+    </tr>
+    <tr ng-repeat="schedule in schedules">
+        <td>{{ schedule.dayofweek }}</td>
+        <td>{{ schedule.lunchdinner }}</td> 
+        <td>{{ schedule.location }}</td>
+        <td>{{ schedule.locationname }}</td>
+        <td><a ng-href="/schedule/{{ schedule.scheduleid }}"><i class="fa fa-pencil" id="pencil"></i></a></th>
+    </tr>
+  </table>
+  <a href="/truckOwners" class="back-links">Go Back</a>
+</div>
+
+<footer-nav></footer-nav>
+
+<!-- <div ng-repeat="schedule in schedules" class="card schedule-card" style="width: 20rem;">
         <div class="card-body">
           <h4 class="card-title">{{ schedule.dayofweek }}</h4>
           <h6 class="card-subtitle mb-2 text-muted">{{ schedule.lunchdinner }}</h6>
@@ -10,4 +36,4 @@
           <p class="card-text">{{ schedule.locationname }}</p>
           <a ng-href="/schedule/{{ schedule.scheduleid }}" class="card-link">Update Info</a>
         </div>
-      </div>
+      </div> -->

@@ -9,12 +9,12 @@
 	text-decoration: none;
 }
 
- .truck-listname {
+ /* .truck-listname {
 	text-transform: uppercase;
 	color: #FF3B3F;
 	font-weight: bold;
 	letter-spacing: 1px;
- }
+ } */
 	
 .watermelon-button {
 	height: 3em;
@@ -90,6 +90,16 @@
 	height: 35em;
 	width: 100%;
 	/* opacity: 0.4; */
+}
+
+.headerDivider {
+	border-left:1px solid  #caebf2;
+	border-right:1px solid  #caebf2;
+	height:140px;
+	position:absolute;
+	right:249px;
+	left:249px;
+	top:10px; 
 }
 
 .menu-title {
@@ -328,8 +338,13 @@
 
 .owner-text {
 	text-align: center;
-	margin-top: 3em;
-	margin-bottom: 5em;
+	margin-top: 1em;
+	/* margin-bottom: 5em; */
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	line-height: 1.3;
+	text-transform: uppercase;
+	font-size: 45px;
+	letter-spacing: 2px;
 }
 
 .owner-buttons {
@@ -399,6 +414,7 @@ th, td {
 }
 
 th {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
 	background-color: #ff3b3f;
 	color: #efefef;
 	font-weight: bold;
@@ -408,6 +424,7 @@ th {
 
 td {
 	text-align: left;
+	text-transform: capitalize;
 }
 
 #schedule-title {

@@ -227,6 +227,10 @@ fieldset {
 	 font-size: 450%;
  }
 
+ indivSocial-icons {
+	 color: white;
+ }
+
  #truck1-menu {
 	 text-align: center;
 	 color: #777;
@@ -295,7 +299,12 @@ fieldset {
 
 #featured-trucks {
 	text-align: center;
-	font-weight: bold;
+	/* font-weight: bold; */
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	line-height: 1;
+	font-size: 45px;
+	/* padding-top: 1em;
+	padding-bottom: .3em; */
 }
 
 .map-container {
@@ -756,10 +765,23 @@ fieldset {
 
 .signup-text {
 	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	line-height: 1;
+	text-transform: uppercase;
+	font-size: 45px;
+	text-align: center;
+	padding-top: .5em;
+	color: #ff3b3f;
+}
+
+/* create truck */
+
+.createTruck-text {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
 	line-height: 1.3;
 	text-transform: uppercase;
 	font-size: 45px;
 	text-align: center;
-	padding-top: 1em;
-	color: #ff3b3f;
+	/* padding-top: 1em;
+	padding-bottom: .3em; */
+	/* color: #ff3b3f; */
 }

@@ -343,7 +343,7 @@ fieldset {
 	width: 50%;
 	height: 50%;
 	float: right;
-	background-image: url(/images/dreamland-bbq.jpg);
+	background-image: url(/images/dreamland-main.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -465,6 +465,8 @@ fieldset {
 .about-us {
 	padding-top: 5em;
 	padding-bottom: 5em;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .main-button {
@@ -472,9 +474,12 @@ fieldset {
 	color: #CAEBF2;
 	font-weight: bold;
 	border-style: none;
-	width: 50%;
+	width: 75%;
 	margin-top: 1.5em;
 	text-transform: uppercase;
+	font-size: 1.5em;
+	letter-spacing: 2px;
+	height: 3em;
 }
 
 .main-about-us {

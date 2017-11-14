@@ -155,7 +155,7 @@ angular.module('TruckHunt.controllers', [])
     .controller('LogoutController', ['$location', 'UserService', function ($location, UserService) {
         UserService.logout()
             .then(() => {
-                $location.replace().path('/');
+                $location.path('/');
             });
     }])
     .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items', '$location', function ($scope, $routeParams, Menu, UserService, Items, $location) {

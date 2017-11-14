@@ -1,16 +1,15 @@
 angular.module('TruckHunt.controllers', [])
-    .controller('ContactUsController', ['$scope', 'ContactForm', function ($scope, ContactForm) {
+    .controller('ContactUsController', ['$scope', 'ContactForm','$location', function ($scope, ContactForm, $location) {
         $scope.send = function () {
+            
+            
             let contact = new ContactForm({
                 from: $scope.email,
                 message: $scope.message
             });
             console.log(contact);
-            contact.$save(function () {
-                alert('Thank you for your message. We will get back with you as soon as possible.')
-            }, function (err) {
-                console.log(err)
-            });
+            
+            contact.$save(alert('Thank you for your message. We will get back with you as soon as possible.'));
         }
     }])
     .controller('MapController', ['$scope', 'NgMap', 'DailySchedule', 'SEOService', '$location', function ($scope, NgMap, DailySchedule, SEOService, $location) {
@@ -156,7 +155,7 @@ angular.module('TruckHunt.controllers', [])
     .controller('LogoutController', ['$location', 'UserService', function ($location, UserService) {
         UserService.logout()
             .then(() => {
-                $location.replace().path('/');
+                $location.path('/');
             });
     }])
     .controller('MenuUpdate', ['$scope', '$routeParams', 'Menu', 'UserService', 'Items', '$location', function ($scope, $routeParams, Menu, UserService, Items, $location) {

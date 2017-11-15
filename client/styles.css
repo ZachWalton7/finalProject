@@ -631,6 +631,61 @@ fieldset {
 	 border: 2px solid black
  }
 
+.social-container {
+	position: relative;
+	margin-left: 43%;
+	margin-top: 3%;
+}
+ /* Style all font awesome icons */
+.fa {
+	padding: 10px;
+	margin-right: 16px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+	text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+
+.fa-facebook {
+    background: #caebf2;
+    color: #ff3b3f;
+}
+
+
+.fa-twitter {
+    background: #caebf2;
+    color: #ff3b3f;
+}
+
+.fa-instagram {
+    background: #caebf2;
+    color: #ff3b3f;
+}
+
+/* .truckSocial {
+
+}
+
+.fa-facebook-square1 {
+	color: #caebf2;
+}
+
+.fa-instagram1 {
+	color: #caebf2;
+}
+
+.fa-twitter-square {
+	color: #caebf2;
+} */
+
 /* create truck page */
 
  #createtruck-btn {

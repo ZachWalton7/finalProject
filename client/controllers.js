@@ -10,6 +10,8 @@ angular.module('TruckHunt.controllers', [])
             console.log(contact);
             
             contact.$save(alert('Thank you for your message. We will get back with you as soon as possible.'));
+
+            $location.path('/');
         }
     }])
     .controller('MapController', ['$scope', 'NgMap', 'DailySchedule', 'SEOService', '$location', function ($scope, NgMap, DailySchedule, SEOService, $location) {

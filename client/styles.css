@@ -665,9 +665,17 @@ fieldset {
     color: #ff3b3f;
 }
 
-.fa-instagram {
-    background: #caebf2;
+#footer-instagram {
+	color: #ff3b3f;
+}
+
+#individual-instagram {
+	background: #caebf2;
     color: #ff3b3f;
+}
+
+.social-icon {
+	padding: 0;
 }
 
 /* .truckSocial {

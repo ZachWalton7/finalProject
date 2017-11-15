@@ -191,7 +191,7 @@ angular.module('TruckHunt.controllers', [])
                 password: $scope.password
             });
             u.$save(function (sucess) {
-                $location.path('/');
+                $location.path('/truckOwners');
             }, function (err) {
                 console.log(err);
             });

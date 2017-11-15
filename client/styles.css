@@ -501,9 +501,10 @@ fieldset {
 
 /* donation page */
 .donation-page {
-	height: 80vh;
+	min-height: 80vh;
 	margin: 0px;
 	padding: 0px;
+	width: 100%;
 }
 
 .donation-header {
@@ -541,7 +542,7 @@ fieldset {
 }
 
 .donation-table {
-	display: table;
+	/* display: table; */
 	height: 100%;
 	margin: 0 auto;
 

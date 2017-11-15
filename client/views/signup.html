@@ -1,6 +1,7 @@
 <main-navigation></main-navigation>
-<p class="signup-text">Create an account</p>
 <div class="contact-container">
+    <p class="signup-text">Create an account</p>
+
     <div class="form-container menu-form">
 
         <form ng-submit="save()">
@@ -11,9 +12,11 @@
                 <input type="text" class="form-control" ng-model="email" placeholder="Enter Your Email Address" />
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" ng-model="password" placeholder="Enter Your Password" />
+                <input type="password" class="form-control" ng-model="password" placeholder="Enter Your Password" />
             </div>
             <button class="menu-button">&nbsp  Create &nbsp </button>
         </form>
     </div>
 </div>
+
+<footer-nav></footer-nav>

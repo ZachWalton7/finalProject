@@ -135,8 +135,9 @@ fieldset {
 
 /* styling for Contact Us page  */
 .contact-container {
-    min-height: 100vh;
-    position: relative;
+    min-height: 70vh;
+	position: relative;
+	margin-top: 3em;
 }
 
 .follow-container {
@@ -303,6 +304,9 @@ fieldset {
 	font-family:"Open Sans", Helvetica, Arial, sans-serif;
 	line-height: 1;
 	font-size: 45px;
+	margin-top: 0.5em;
+	color: #ff3b3f;
+	text-transform: uppercase;
 	/* padding-top: 1em;
 	padding-bottom: .3em; */
 }
@@ -497,7 +501,7 @@ fieldset {
 
 /* donation page */
 .donation-page {
-	height: 100%;
+	height: 80vh;
 	margin: 0px;
 	padding: 0px;
 }
@@ -635,6 +639,7 @@ fieldset {
 	 letter-spacing: 1px;
 	 text-transform: uppercase;
 	 padding: 15px 32px;
+	 border-radius: 0;
  }
 
  #createtruck-btn:hover {

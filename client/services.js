@@ -43,6 +43,7 @@ angular.module('TruckHunt.services', [])
             url: '/api/users/logout'
         }).then(() => {
             currentUser = undefined;
+            $location.path('/');
         });
     }
 

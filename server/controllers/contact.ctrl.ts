@@ -9,7 +9,6 @@ router.post('/', (req, res) => {
     .then((response) => {
         res.sendStatus(201);
     }).catch((e) => {
-        console.log(e.response.body.errors);
         res.sendStatus(500);
     })
 });

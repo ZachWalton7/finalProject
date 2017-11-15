@@ -1,7 +1,13 @@
 <main-navigation></main-navigation>
 
+
+<div class="container-fluid schedule-hero">
+        
+</div>
+
 <div class="container menu-form">
-    <h1 class="text-center">Update your Schedule!</h1>
+    <div class="text-center menu-title">Update your Schedule</div>
+    <div class="menu-subtitle">for {{ single.lunchdinner }} on {{ single.dayofweek }}</div>
 
     <div ng-controller="SingleScheduleUpdate as vm" class="form-group">
 
@@ -28,7 +34,9 @@
         </div>
         <div id="menu-buttons" class="text-center">
             <button type="button" class="menu-button" ng-click="updateSchedule()">Update</button>
-            <a haref="/schedule" class="back-links">Go Back</a>
+            <a href="/schedule" class="back-links">Go Back</a>
         </div>
     </div>
 </div>
+
+<footer-nav></footer-nav>

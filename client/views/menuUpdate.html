@@ -1,7 +1,11 @@
 <main-navigation></main-navigation>
+
+<div class="container-fluid menu-hero">
+    
+</div>
 <div class="container" id="menu-container">
     <div class="menu-title">
-        <h2>Update Menu</h2>
+        <p>Update Menu</p>
     </div>
     <div ng-repeat="menu in menus" class="menu-items">
         {{ menu.item }} {{ menu.cost | currency}}
@@ -11,10 +15,12 @@
     </div>
     <div class="create-item text-center">
         <a href="/menu/create" class="list-btn">
-            <div class="watermelon-button" id="menu-button">
+            <div class="menu-button" id="menu-button">
                 <i class="fa fa-plus"></i> Add new Item
             </div>
         </a>
         <a href="/truckOwners" class="back-links">Go Back</a>
     </div>
 </div>
+
+<footer-nav></footer-nav>
